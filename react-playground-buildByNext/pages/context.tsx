@@ -1,7 +1,7 @@
 import React from 'react';
 import MyConsumer from "../components/MyConsumer";
 import Menu from "../components/Menu";
-import useTitle from "../hooks/useTitle";
+import {FrameCss} from "../constant/menuCss";
 
 interface ITheme {
     light: {
@@ -54,7 +54,7 @@ class Playground extends React.Component<any, IState> {
 
     render() {
         return (
-            <div style={{display: 'flex', flexDirection: 'column'}}>
+            <div style={{}}>
                 <Menu/>
                 <ThemeContext.Provider value={{theme: this.state.theme, toggleTheme: this.toggleTheme}}>
                     <MyConsumer/>

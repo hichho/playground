@@ -9,3 +9,12 @@ const ForwardingRefs: FC = (): ReactElement => {
     </div>
 }
 export default ForwardingRefs;
+
+const FancyButton = () => {
+    return (
+        <div>
+            <input/>
+            <button>i am a button</button>
+        </div>
+    )
+}
