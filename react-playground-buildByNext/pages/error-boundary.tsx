@@ -1,5 +1,7 @@
 import React, {FC, ReactElement} from 'react';
 import ErrorBoundary from "../components/ErrorBoundary";
+import Menu from "../components/Menu";
+import useTitle from "../hooks/useTitle";
 
 /**
  * it's not working on next.js,because next.js caught this error first
@@ -10,7 +12,11 @@ interface IProps {
 }
 
 const ErrorBoundaryPage: FC = (): ReactElement => {
-    return (<div>
+
+    useTitle('error-boundary');
+
+    return (<div style={{display: 'flex', flexDirection: 'column'}}>
+        <Menu/>
         <ErrorBoundary>
             <>
                 <Hero heroName='Batman'/>
@@ -23,7 +29,7 @@ const ErrorBoundaryPage: FC = (): ReactElement => {
 
 const Hero: FC<IProps> = ({heroName}) => {
     if (heroName === 'Joker') {
-        throw  new Error('Not a hero');
+        // throw  new Error('Not a hero');
     }
     return <h3>
         {heroName}

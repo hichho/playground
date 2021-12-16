@@ -1,5 +1,7 @@
 import React from 'react';
 import MyConsumer from "../components/MyConsumer";
+import Menu from "../components/Menu";
+import useTitle from "../hooks/useTitle";
 
 interface ITheme {
     light: {
@@ -46,9 +48,14 @@ class Playground extends React.Component<any, IState> {
         ))
     }
 
+    componentDidMount() {
+        document.title = 'react-context';
+    }
+
     render() {
         return (
-            <div>
+            <div style={{display: 'flex', flexDirection: 'column'}}>
+                <Menu/>
                 <ThemeContext.Provider value={{theme: this.state.theme, toggleTheme: this.toggleTheme}}>
                     <MyConsumer/>
                 </ThemeContext.Provider>
