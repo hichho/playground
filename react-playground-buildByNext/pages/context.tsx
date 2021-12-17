@@ -1,7 +1,6 @@
 import React from 'react';
 import MyConsumer from "../components/MyConsumer";
 import Menu from "../components/Menu";
-import {FrameCss} from "../constant/menuCss";
 
 interface ITheme {
     light: {
