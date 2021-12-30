@@ -1,7 +1,7 @@
 import React, {FC, ReactElement, useRef, useMemo} from "react";
-import {ITodoItem} from "../../pages/todoList";
 import styles from '../../styles/todoItem.module.css';
 import {calculateTimes} from "../../pages/ref-2";
+import {ITodoItem} from "../TodoListComponent/TodoList";
 
 interface IProps {
     todo: ITodoItem;
