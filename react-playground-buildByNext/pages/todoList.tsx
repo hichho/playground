@@ -10,23 +10,31 @@ export interface ITodoItem {
     toggle: boolean;
 }
 
-const initialTodos: ITodoItem[] = [
-    {id: '1', name: 'memo', toggle: false},
-    {id: '2', name: 'useCallback', toggle: false},
-    {id: '3', name: 'useMemo', toggle: true},
-    {id: '4', name: 'useRef', toggle: false},
-    {id: '5', name: 'React', toggle: false},
-];
+
+const initialTodos: ITodoItem[] = [];
+
+const getUpdated = (type: 'add' | 'toggle', payload: ITodoItem, origin: ITodoItem[]) => {
+    switch (type) {
+        case 'add':
+            return [...origin, payload];
+        case 'toggle':
+            return [...origin.map((item) => {
+                return item.id === payload.id ? payload : item;
+            })]
+        default:
+            return origin;
+    }
+}
+
 
 const TodoList = () => {
     const [todos, setTodos] = useState(initialTodos);
     const fatherComponentRenderTime = useRef<number>(0);
     fatherComponentRenderTime.current += 1;
 
-    const handleChange = (todo: ITodoItem) => {
-        setTodos([...todos.map((item) => {
-            return item.id === todo.id ? todo : item
-        })]);
+
+    const handleChange = (type: 'add' | 'toggle', todo: ITodoItem) => {
+        setTodos(getUpdated(type, todo, todos));
     }
     return <div className={styles.frame}>
         <div className={styles.todo}>
@@ -37,10 +45,12 @@ const TodoList = () => {
 
             <ul className={styles.ul}>
                 {todos.map(todo => (
-                    <Todo key={todo.id} todo={todo} onChange={handleChange}/>
+                    <Todo key={todo.id} todo={todo} onChange={(todo) => {
+                        handleChange('toggle', todo)
+                    }}/>
                 ))}
             </ul>
-            <AddTodo/>
+            <AddTodo add={(todo) => handleChange('add', todo)}/>
         </div>
     </div>
 }

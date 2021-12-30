@@ -11,14 +11,12 @@ const Todo: FC<IProps> = ({todo, onChange}): ReactElement => {
     const childrenRenderTime = useRef<number>(0);
     childrenRenderTime.current += 1;
 
-
     return (<div className={styles.item}>
         {radio(todo, onChange)}
-        {todo.id}
+        <span className={!todo.toggle ? styles.name : styles.delete_name}>{todo.name}</span>
     </div>);
 }
 export default Todo;
-
 
 const radio = (todo: ITodoItem, handleClick: (todo: ITodoItem) => void) => {
     const handleRadio = () => {
