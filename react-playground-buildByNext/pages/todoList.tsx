@@ -11,7 +11,12 @@ export interface ITodoItem {
 }
 
 
-const initialTodos: ITodoItem[] = [];
+const initialTodos: ITodoItem[] = [
+        {id: '1', name: 'vue', toggle: false},
+        {id: '2', name: 'react', toggle: false},
+        {id: '3', name: 'svelte', toggle: false},
+    ]
+;
 
 const getUpdated = (type: 'add' | 'toggle', payload: ITodoItem, origin: ITodoItem[]) => {
     switch (type) {
@@ -28,7 +33,7 @@ const getUpdated = (type: 'add' | 'toggle', payload: ITodoItem, origin: ITodoIte
 
 
 const TodoList = () => {
-    const [todos, setTodos] = useState(initialTodos);
+    const [todos, setTodos] = useState<ITodoItem[]>(initialTodos);
     const fatherComponentRenderTime = useRef<number>(0);
     fatherComponentRenderTime.current += 1;
 

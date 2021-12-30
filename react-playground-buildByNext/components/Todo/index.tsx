@@ -1,6 +1,7 @@
 import {FC, ReactElement, useRef} from "react";
 import {ITodoItem} from "../../pages/todoList";
 import styles from '../../styles/todoItem.module.css';
+import {calculateTimes} from "../../pages/ref-2";
 
 interface IProps {
     todo: ITodoItem;
@@ -12,8 +13,12 @@ const Todo: FC<IProps> = ({todo, onChange}): ReactElement => {
     childrenRenderTime.current += 1;
 
     return (<div className={styles.item}>
-        {radio(todo, onChange)}
-        <span className={!todo.toggle ? styles.name : styles.delete_name}>{todo.name}</span>
+        <div className={styles.left_block}>
+            {radio(todo, onChange)}
+            <span className={!todo.toggle ? styles.name : styles.delete_name}>{todo.name}</span>
+        </div>
+
+        <div className={styles.render_num}>{calculateTimes(childrenRenderTime.current)}</div>
     </div>);
 }
 export default Todo;
@@ -24,8 +29,7 @@ const radio = (todo: ITodoItem, handleClick: (todo: ITodoItem) => void) => {
     };
     if (todo.toggle) {
         return (<div className={styles.checked}
-                     onClick={handleRadio}
-        >
+                     onClick={handleRadio}>
             <div className={styles.center}/>
         </div>);
     } else {
