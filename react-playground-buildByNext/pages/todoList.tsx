@@ -1,4 +1,4 @@
-import {useRef, useState} from "react";
+import React, {useRef, useState, useCallback} from "react";
 import Todo from "../components/Todo";
 import styles from '../styles/todo.module.css';
 import {calculateTimes} from "./ref-2";
@@ -18,29 +18,30 @@ const initialTodos: ITodoItem[] = [
     ]
 ;
 
-const getUpdated = (type: 'add' | 'toggle', payload: ITodoItem, origin: ITodoItem[]) => {
-    switch (type) {
-        case 'add':
-            return [...origin, payload];
-        case 'toggle':
-            return [...origin.map((item) => {
-                return item.id === payload.id ? payload : item;
-            })]
-        default:
-            return origin;
-    }
+const getUpdated = (todo: ITodoItem, todos: ITodoItem[]): ITodoItem[] => {
+    return [...todos, todo];
 }
 
+const TodoItem = React.memo(Todo);
 
 const TodoList = () => {
     const [todos, setTodos] = useState<ITodoItem[]>(initialTodos);
     const fatherComponentRenderTime = useRef<number>(0);
     fatherComponentRenderTime.current += 1;
 
+    const handleToggle = useCallback((todo) => {
+        setTodos(todos => {
+            return [...todos.map((item: ITodoItem) => {
+                return item.id === todo.id ? todo : item;
+            })];
+        });
+    }, []);
 
-    const handleChange = (type: 'add' | 'toggle', todo: ITodoItem) => {
-        setTodos(getUpdated(type, todo, todos));
-    }
+    const handleAdd = useCallback((todo, todos) => {
+        setTodos(getUpdated(todo, todos));
+    }, []);
+
+
     return <div className={styles.frame}>
         <div className={styles.todo}>
 
@@ -50,12 +51,10 @@ const TodoList = () => {
 
             <ul className={styles.ul}>
                 {todos.map(todo => (
-                    <Todo key={todo.id} todo={todo} onChange={(todo) => {
-                        handleChange('toggle', todo)
-                    }}/>
+                    <TodoItem key={todo.id} todo={todo} onChange={handleToggle}/>
                 ))}
             </ul>
-            <AddTodo add={(todo) => handleChange('add', todo)}/>
+            <AddTodo add={(todo) => handleAdd(todo, todos)}/>
         </div>
     </div>
 }

@@ -1,4 +1,4 @@
-import {FC, ReactElement, useRef} from "react";
+import React, {FC, ReactElement, useRef, useMemo} from "react";
 import {ITodoItem} from "../../pages/todoList";
 import styles from '../../styles/todoItem.module.css';
 import {calculateTimes} from "../../pages/ref-2";
@@ -12,14 +12,15 @@ const Todo: FC<IProps> = ({todo, onChange}): ReactElement => {
     const childrenRenderTime = useRef<number>(0);
     childrenRenderTime.current += 1;
 
-    return (<div className={styles.item}>
-        <div className={styles.left_block}>
-            {radio(todo, onChange)}
-            <span className={!todo.toggle ? styles.name : styles.delete_name}>{todo.name}</span>
-        </div>
+        return (<div className={styles.item}>
+            <div className={styles.left_block}>
+                {radio(todo, onChange)}
+                <span className={!todo.toggle ? styles.name : styles.delete_name}>{todo.name}</span>
+            </div>
 
-        <div className={styles.render_num}>{calculateTimes(childrenRenderTime.current)}</div>
-    </div>);
+            <div className={styles.render_num}>{calculateTimes(childrenRenderTime.current)}</div>
+        </div>);
+
 }
 export default Todo;
 
