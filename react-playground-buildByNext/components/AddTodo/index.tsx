@@ -1,6 +1,6 @@
 import styles from '../../styles/addTodo.module.css';
 import React, {FC, ReactElement, useState} from "react";
-import {ITodoItem} from "../../pages/todoList";
+import {ITodoItem} from "../TodoListComponent/TodoList";
 
 interface IProps {
     add: (todo: ITodoItem) => void;
