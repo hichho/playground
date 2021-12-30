@@ -13,6 +13,7 @@ const TodoListPage = () => {
 
     const fatherComponentRenderTime = useRef<number>(0);
     const [visibility, setVisibility] = useState<VisibilityType>(VisibilityType.All);
+    const [themeColor, setColor] = useState<string>('#EE3A8C');
     fatherComponentRenderTime.current += 1;
 
     const getCss = (value: VisibilityType) => {
@@ -23,6 +24,10 @@ const TodoListPage = () => {
         setVisibility(value);
     }, []);
 
+    const backgroundColor = useCallback(() => `linear-gradient(to top right, blue, ${themeColor})`
+        , [themeColor]
+    );
+
     return (
         <div className={styles.frame}>
 
@@ -30,27 +35,38 @@ const TodoListPage = () => {
                 render: {calculateTimes(fatherComponentRenderTime.current)}
             </div>
 
-            <div className={styles.todo}>
-                {/*head*/}
-                <div className={styles.filter}>
-                    <div className={getCss(VisibilityType.All)}
-                         onClick={() => handleClick(VisibilityType.All)}
-                    >All
+            <div className={styles.todo}
+                 style={{background: backgroundColor()}}>
+                {/*color*/}
+                <div className={styles.head}>
+
+                    <div className={styles.input_frame}>
+                        <input type={'color'} value={themeColor} className={styles.input}
+                               onChange={event => setColor(event.target.value)}
+                        />
                     </div>
-                    <div
-                        className={getCss(VisibilityType.Active)}
-                        onClick={() => handleClick(VisibilityType.Active)}
-                    >Active
-                    </div>
-                    <div
-                        className={getCss(VisibilityType.Completed)}
-                        onClick={() => handleClick(VisibilityType.Completed)}
-                    >Completed
+
+                    {/*filter*/}
+                    <div className={styles.filter}>
+                        <div className={getCss(VisibilityType.All)}
+                             onClick={() => handleClick(VisibilityType.All)}
+                        >All
+                        </div>
+                        <div
+                            className={getCss(VisibilityType.Active)}
+                            onClick={() => handleClick(VisibilityType.Active)}
+                        >Active
+                        </div>
+                        <div
+                            className={getCss(VisibilityType.Completed)}
+                            onClick={() => handleClick(VisibilityType.Completed)}
+                        >Completed
+                        </div>
                     </div>
                 </div>
 
                 {/*todoList*/}
-                <TodoList visibilityType={visibility}/>
+                <TodoList visibilityType={visibility} themeColor={themeColor}/>
             </div>
         </div>
     )

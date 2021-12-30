@@ -22,6 +22,29 @@
     padding: 24px;
 }
 
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input_frame {
+    width: 48px;
+    margin-right: 24px;
+    height: 48px;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+.input {
+    border: 0;
+    padding: 0;
+    width: 200%;
+    height: 200%;
+    cursor: pointer;
+    transform: translate(-25%, -25%)
+}
+
 .title {
     font-family: "Gill Sans", sans-serif;
     font-size: 20px;
@@ -34,7 +57,9 @@
 }
 
 .filter {
+    background-color: gold;
     display: flex;
+    flex-grow: 1;
     justify-content: space-around;
     align-items: center;
     font-family: "Gill Sans", sans-serif;
