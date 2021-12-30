@@ -3,7 +3,7 @@ import Child from "../components/Child";
 
 
 export const calculateTimes = (count: number): string | number => {
-    return count >= 2 ? (count / 2) : 'initial';
+    return count >= 2 ? Math.ceil((count / 2)) : 1;
 }
 
 const Ref2 = () => {
