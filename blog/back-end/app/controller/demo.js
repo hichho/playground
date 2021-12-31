@@ -10,7 +10,10 @@ const Controller = require('egg').Controller;
 class DemoController extends Controller {
   async index() {
     const { ctx } = this;
-    ctx.body = '<h1>this is my first egg.js</h1>';
+    await ctx.render('demo.html', {
+      id: 2021, name: 'iphone', version: 13, description: 'newest iphone',
+      appearance: [ '120', '190', '20' ],
+    });
   }
 
   async getApples() {

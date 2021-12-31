@@ -22,8 +22,19 @@ module.exports = appInfo => {
   config.security = {
     csrf: {
       enable: false,
-    }
-  }
+    },
+  };
+
+  // view & ejs
+  config.view = {
+    mapping: {
+      '.html': 'ejs',
+    },
+  };
+
+  config.ejs = {
+    delimiter: '%',
+  };
 
   // add your user config here
   const userConfig = {
