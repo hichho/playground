@@ -17,6 +17,13 @@ class HomeController extends Controller {
     const { ctx } = this;
     ctx.body = '<h1>hello , this is my Demo</h1>';
   }
+
+  async testApple() {
+    const { ctx } = this;
+    const id = ctx.query.id;
+    const res = await ctx.service.demo.getApple(id);
+    ctx.body = res;
+  }
 }
 
 module.exports = HomeController;
