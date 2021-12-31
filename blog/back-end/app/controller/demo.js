@@ -11,6 +11,7 @@ class DemoController extends Controller {
   async index() {
     const { ctx } = this;
     const username = ctx.session.username;
+    console.log(ctx.session.counter);
     await ctx.render('demo.html', {
       id: 2021, name: 'iphone', version: 13, description: 'newest iphone',
       appearance: [ '120', '190', '20' ], username,

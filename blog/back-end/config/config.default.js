@@ -24,7 +24,7 @@ module.exports = appInfo => {
     renew: true,
   };
 
-  // add your middleware config here
+  // add your middleware config here 'counter'
   config.middleware = [];
 
   // forbidden csrf 跨域请求伪造
