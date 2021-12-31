@@ -6,16 +6,21 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/public/css/default.css"/>
 </head>
 <body>
-<h1>this is the new product party</h1>
+
+<%include header.html%>
+
 <h2>and now,this is <%=name%></h2>
 <h3><%=description%></h3>
 <h4><%=version%></h4>
 <ul>
-    <% for(var i=0;i<appearance.length;i++){ %>
-    <li><%=appearance[i]%></li>
-    <%}%>
+    <% for(var i=0;i
+    <appearance.length
+            ;i++){ %>
+        <li><%=appearance[i]%></li>
+        <%}%>
 </ul>
 </body>
 </html>

@@ -36,6 +36,11 @@ module.exports = appInfo => {
     delimiter: '%',
   };
 
+  // 静态资源目录
+  config.static = {
+    // prefix: '/assets',
+  };
+
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',
