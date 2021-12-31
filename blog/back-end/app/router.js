@@ -13,4 +13,8 @@ module.exports = app => {
   router.get('/getStrictQuery/:name/:age', controller.demo.getStrictQuery);
   router.post('/add', controller.demo.add);
   router.get('/testGetQuery', controller.home.testApple);
+  router.post('/addCookie', controller.demo.addCookie);
+  router.post('/deleteCookie', controller.demo.deleteCookie);
+  router.post('/getCookie', controller.demo.getCookie);
+  router.post('/setCookie', controller.demo.setCookie);
 };

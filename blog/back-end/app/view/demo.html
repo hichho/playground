@@ -12,15 +12,66 @@
 
 <%include header.html%>
 
+<div>
+    <button onclick="addCookie()">
+        add Cookie
+    </button>
+    <button onclick="deleteCookie()">
+        delete Cookie
+    </button>
+    <button onclick="setCookie()">
+        set Cookie
+    </button>
+    <button onclick="getCookie()">
+        get Cookie
+    </button>
+</div>
+
+
 <h2>and now,this is <%=name%></h2>
 <h3><%=description%></h3>
 <h4><%=version%></h4>
 <ul>
-    <% for(var i=0;i
-    <appearance.length
-            ;i++){ %>
-        <li><%=appearance[i]%></li>
-        <%}%>
+    <% for(var i=0;i<appearance.length ;i++){ %><li><%=appearance[i]%></li><%}%>
 </ul>
+
+<script>
+  function addCookie() {
+    fetch('/addCookie', {
+      method: 'post',
+      headers: {
+        'Content-type': 'application/json'
+      }
+    });
+  }
+
+  function deleteCookie() {
+    fetch('/deleteCookie', {
+      method: 'post',
+      headers: {
+        'Content-type': 'application/json'
+      }
+    });
+  }
+
+  function setCookie() {
+    fetch('/setCookie', {
+      method: 'post',
+      headers: {
+        'Content-type': 'application/json'
+      }
+    });
+  }
+
+  function getCookie() {
+    fetch('/getCookie', {
+      method: 'post',
+      headers: {
+        'Content-type': 'application/json'
+      }
+    });
+  }
+</script>
+
 </body>
 </html>

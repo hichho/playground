@@ -27,7 +27,7 @@ class DemoController extends Controller {
 
   /**
    * get,自由传递参数模式
-   * @returns {Promise<void>}
+   * @return {Promise<void>}
    */
   async getQuery() {
     const { ctx } = this;
@@ -51,6 +51,43 @@ class DemoController extends Controller {
     ctx.body = {
       status: 200,
       data: ctx.request.body,
+    };
+  }
+
+  async addCookie() {
+    const { ctx } = this;
+    ctx.cookies.set('user', 'hichho');
+    ctx.body = {
+      status: 200,
+      data: '添加cookie成功',
+    };
+  }
+
+  async getCookie() {
+    const { ctx } = this;
+    const user = ctx.cookies.get('user');
+    console.log(user);
+    ctx.body = {
+      status: 200,
+      data: '获取cookie成功',
+    };
+  }
+
+  async deleteCookie() {
+    const { ctx } = this;
+    ctx.cookies.set('user', null);
+    ctx.body = {
+      status: 200,
+      data: '删除cookie成功',
+    };
+  }
+
+  async setCookie() {
+    const { ctx } = this;
+    ctx.cookies.set('user', 'had set');
+    ctx.body = {
+      status: 200,
+      data: '修改cookie成功',
     };
   }
 
