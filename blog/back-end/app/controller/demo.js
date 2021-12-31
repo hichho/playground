@@ -10,9 +10,10 @@ const Controller = require('egg').Controller;
 class DemoController extends Controller {
   async index() {
     const { ctx } = this;
+    const username = ctx.session.username;
     await ctx.render('demo.html', {
       id: 2021, name: 'iphone', version: 13, description: 'newest iphone',
-      appearance: [ '120', '190', '20' ],
+      appearance: [ '120', '190', '20' ], username,
     });
   }
 
@@ -56,7 +57,11 @@ class DemoController extends Controller {
 
   async addCookie() {
     const { ctx } = this;
-    ctx.cookies.set('user', 'hichho');
+    // cookie的相关设置，maxAge:时效性，httpOnly:是否只允许服务器设置 encrypt是否加密
+    ctx.cookies.set('user', 'hichho', {
+      maxAge: 1000 * 20, httpOnly: true, encrypt: true,
+    });
+    ctx.session.username = 'hichho';
     ctx.body = {
       status: 200,
       data: '添加cookie成功',
@@ -76,6 +81,7 @@ class DemoController extends Controller {
   async deleteCookie() {
     const { ctx } = this;
     ctx.cookies.set('user', null);
+    ctx.session.username = null;
     ctx.body = {
       status: 200,
       data: '删除cookie成功',
@@ -85,6 +91,7 @@ class DemoController extends Controller {
   async setCookie() {
     const { ctx } = this;
     ctx.cookies.set('user', 'had set');
+    ctx.session.username = 'username had set';
     ctx.body = {
       status: 200,
       data: '修改cookie成功',

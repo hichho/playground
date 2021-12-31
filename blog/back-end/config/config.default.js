@@ -15,6 +15,15 @@ module.exports = appInfo => {
   // use for cookie sign key, should change to your own and keep security
   config.keys = appInfo.name + '_1640872416279_4377';
 
+
+  // session
+  config.session = {
+    key: 'HICHHO',
+    httpOnly: false,
+    maxAge: 1000 * 60,
+    renew: true,
+  };
+
   // add your middleware config here
   config.middleware = [];
 
