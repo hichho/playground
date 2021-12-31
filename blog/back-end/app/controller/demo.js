@@ -1,7 +1,6 @@
 'use strict';
 
 /**
- * 05集
  * @type {Controller}
  */
 
@@ -105,6 +104,24 @@ class DemoController extends Controller {
     const params = ctx.params('id');
     console.log(params);
     ctx.body = 'newContext';
+  }
+
+  async newRequest() {
+    const { ctx } = this;
+    const token = ctx.request.token;
+    ctx.body = {
+      status: 200,
+      body: {
+        token,
+      },
+    };
+  }
+
+
+  async newResponse() {
+    const { ctx } = this;
+    ctx.response.token = 'hichhhooo';
+    ctx.body = 'demo';
   }
 
 }

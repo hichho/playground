@@ -1,5 +1,7 @@
 'use strict';
 
+// 18集
+
 /**
  * @param {Egg.Application} app - egg application
  */
@@ -19,4 +21,6 @@ module.exports = app => {
   router.post('/getCookie', controller.demo.getCookie);
   router.post('/setCookie', controller.demo.setCookie);
   router.post('/newContext', controller.demo.newContext);
+  router.post('/newRequest', controller.demo.newRequest);
+  router.get('/newResponse', controller.demo.newResponse);
 };
