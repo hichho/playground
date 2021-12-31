@@ -1,4 +1,7 @@
 'use strict';
+/**
+ * 页面埋点、获取访问ip
+ */
 
 module.exports = () => {
   return async (ctx, next) => {

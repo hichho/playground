@@ -9,12 +9,13 @@ const Controller = require('egg').Controller;
 
 class DemoController extends Controller {
   async index() {
-    const { ctx } = this;
+    const { ctx, app } = this;
     const username = ctx.session.username;
     console.log(ctx.session.counter);
     await ctx.render('demo.html', {
       id: 2021, name: 'iphone', version: 13, description: 'newest iphone',
-      appearance: [ '120', '190', '20' ], username,
+      appearance: [ '120', '190', '20' ], username, nowTime: app.currentTime(),
+      nowTimeGetByAttribute: app.timeProp,
     });
   }
 
@@ -97,6 +98,13 @@ class DemoController extends Controller {
       status: 200,
       data: '修改cookie成功',
     };
+  }
+
+  async newContext() {
+    const { ctx } = this;
+    const params = ctx.params('id');
+    console.log(params);
+    ctx.body = 'newContext';
   }
 
 }

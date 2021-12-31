@@ -18,4 +18,5 @@ module.exports = app => {
   router.post('/deleteCookie', controller.demo.deleteCookie);
   router.post('/getCookie', controller.demo.getCookie);
   router.post('/setCookie', controller.demo.setCookie);
+  router.post('/newContext', controller.demo.newContext);
 };
