@@ -117,13 +117,12 @@ class DemoController extends Controller {
     };
   }
 
-
   async newResponse() {
     const { ctx } = this;
     ctx.response.token = 'hichhhooo';
-    ctx.body = 'demo';
+    const testBase64 = ctx.helper.base64Encode('haha');
+    ctx.body = testBase64;
   }
-
 }
 
 module.exports = DemoController;
