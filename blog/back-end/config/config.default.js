@@ -24,6 +24,18 @@ module.exports = appInfo => {
     renew: true,
   };
 
+  config.mysql = {
+    app: true,
+    agent: false,
+    // client: {
+    //   host: '192.168.0.101',
+    //   port: '3306',
+    //   user: 'root',
+    //   password: 'root',
+    //   database: 'test-egg',
+    // },
+  };
+
   // add your middleware config here 'counter'
   config.middleware = [];
 

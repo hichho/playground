@@ -23,4 +23,9 @@ module.exports = app => {
   router.post('/newContext', controller.demo.newContext);
   router.post('/newRequest', controller.demo.newRequest);
   router.get('/newResponse', controller.demo.newResponse);
+  router.get('/addAppleDb', controller.appleManage.addApple);
+  router.get('/getAppleDb', controller.appleManage.getApple);
+  router.get('/updateAppleDb', controller.appleManage.updateApple);
+  router.get('/deleteAppleDb', controller.appleManage.deleteApple);
+
 };
