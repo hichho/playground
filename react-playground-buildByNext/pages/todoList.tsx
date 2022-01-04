@@ -1,7 +1,7 @@
 import TodoList from "../components/TodoListComponent/TodoList";
 import React, {useCallback, useRef, useState} from "react";
 import styles from "../styles/todo.module.css";
-import {calculateTimes} from "./ref-2";
+import useRenderTimes from "../hooks/useRenderTimes";
 
 export enum VisibilityType {
     All,
@@ -11,10 +11,10 @@ export enum VisibilityType {
 
 const TodoListPage = () => {
 
-    const fatherComponentRenderTime = useRef<number>(0);
     const [visibility, setVisibility] = useState<VisibilityType>(VisibilityType.All);
     const [themeColor, setColor] = useState<string>('#EE3A8C');
-    fatherComponentRenderTime.current += 1;
+
+    const fatherComponentRenderTime = useRenderTimes();
 
     const getCss = (value: VisibilityType) => {
         return visibility === value ? styles.selected : styles.un_selected;
@@ -28,11 +28,12 @@ const TodoListPage = () => {
         , [themeColor]
     );
 
+
     return (
         <div className={styles.frame}>
 
             <div className={styles.title}>
-                render: {calculateTimes(fatherComponentRenderTime.current)}
+                render: {fatherComponentRenderTime}
             </div>
 
             <div className={styles.todo}

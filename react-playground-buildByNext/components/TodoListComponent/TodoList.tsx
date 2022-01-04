@@ -3,7 +3,7 @@ import Todo from "../Todo";
 import styles from '../../styles/todo.module.css';
 import AddTodo from "../AddTodo";
 import {VisibilityType} from "../../pages/todoList";
-import {calculateTimes} from "../../pages/ref-2";
+import {calculateTimes} from "../../hooks/useRenderTimes";
 
 export interface ITodoItem {
     id: string;

@@ -1,11 +1,10 @@
-import {ReactElement, useRef, useState} from "react";
-import {calculateTimes} from "../../pages/ref-2";
+import {ReactElement, useState} from "react";
+import useRenderTimes from "../../hooks/useRenderTimes";
 
 const Child = (): ReactElement => {
     const [count, setCount] = useState<number>(0);
-    const ref = useRef(0);
-    ref.current = ref.current + 1;
-    console.log('children component render times:' + calculateTimes(ref.current));
+    const renderTimes = useRenderTimes();
+    console.log('children component render times:' + renderTimes);
     return <div style={{margin: 12}}>
         <div>i am children count:{count}</div>
         <button onClick={() => setCount(count + 1)}>add</button>

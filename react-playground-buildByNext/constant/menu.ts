@@ -7,4 +7,5 @@ export const MenuData: IMenuTyping[] = [
     {id: '4', name: 'ref', path: '/ref'},
     {id: '5', name: 'hoc', path: '/hoc'},
     {id: '6', name: 'ref-2', path: '/ref-2'},
+    {id: '7', name: 'todolist', path: '/todoList'},
 ];
