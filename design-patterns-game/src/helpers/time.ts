@@ -29,7 +29,7 @@ export const formatTime = (time: unknown, detailed: boolean = true) => {
     if (time === undefined || time === null || time === Infinity || time === -Infinity) {
         handleWrongTime(time);
     }
-    //判断是否是Date
+    //is Date?
     if (time instanceof Date) {
         return getDate(time, detailed);
     }
