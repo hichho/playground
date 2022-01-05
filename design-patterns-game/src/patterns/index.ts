@@ -21,6 +21,7 @@ import STATE from './behavioral_state';
 import STRATEGY from './behavioral_strategy';
 import TEMPLATE from './behavioral_template';
 import VISITOR from './behavioral_visitor';
+import {IPattern} from "@/typings/typing";
 
 export const patterns = [
     ABSTRACT_FACTORY,
@@ -50,7 +51,7 @@ export const patterns = [
     VISITOR
 ];
 
-const mixed = [...patterns];
+const mixed: IPattern[] = [...patterns];
 for (let i = mixed.length - 1; i > 0; i--) {
     const rand = Math.floor(Math.random() * (i + 1));
     [mixed[i], mixed[rand]] = [mixed[rand], mixed[i]];

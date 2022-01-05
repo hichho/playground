@@ -21,3 +21,12 @@ export interface INavigationItem {
     id: number;
     path: string;
 }
+
+export interface IPattern{
+    id:string;
+    name:string;
+    type:string;
+    when:string;
+    codeES5:string;
+    codeES6:string;
+}
