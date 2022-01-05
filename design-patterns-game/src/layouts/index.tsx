@@ -1,22 +1,37 @@
-import React, {Suspense, lazy, createContext, useState} from 'react';
+import React, {createContext, lazy, Suspense, useCallback, useState} from 'react';
 import {Spin} from 'antd';
 import {IThemeContext, THEME_MODE} from "@/typings/themeTyping";
-import {IProps} from "@/typings/typing";
+import {ES_VERSION, IProps} from "@/typings/typing";
 import {initialTheme} from "@/constants/theme";
+import Head from "@/components/Head";
+import Flex from "@/components/Flex";
+import less from './index.less';
 
 const ErrorBoundary = lazy(() => import('@/components/ErrorBoundary'));
 export const ThemeContext = createContext<IThemeContext | null>(null);
 
 const Layout = (props: IProps) => {
     const [themeMode, setTheme] = useState<THEME_MODE>(initialTheme());
+    const [esVersion, setVersion] = useState<ES_VERSION>(ES_VERSION.ES6);
+    const changeTheme = () => setTheme(
+        prevState => prevState === THEME_MODE.LIGHT ? THEME_MODE.DARK : THEME_MODE.LIGHT);
+    const changeVersion = useCallback(() => setVersion(
+            prevState => prevState === ES_VERSION.ES6 ? ES_VERSION.PRE : ES_VERSION.ES6)
+        , []);
+
     return (
         <Suspense fallback={<Spin/>}>
             <ErrorBoundary>
                 <ThemeContext.Provider value={{
                     themeType: themeMode,
-                    changeTheme: (theme: THEME_MODE) => setTheme(theme),
+                    changeTheme,
                 }}>
-                    {props.children}
+                    <Flex direction={"column"} className={less.frame} alignItems={"center"}>
+                        <Flex direction={'column'} className={less.container} alignItems={'center'}>
+                            <Head esVersion={esVersion} changeVersion={changeVersion}/>
+                            {props.children}
+                        </Flex>
+                    </Flex>
                 </ThemeContext.Provider>
             </ErrorBoundary>
         </Suspense>

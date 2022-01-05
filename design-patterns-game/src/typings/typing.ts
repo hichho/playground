@@ -10,3 +10,14 @@ export interface IHttpResult<T> {
 export interface IProps {
     children: ReactNode;
 }
+
+export enum ES_VERSION {
+    ES6,
+    PRE
+}
+
+export interface INavigationItem {
+    name: string;
+    id: number;
+    path: string;
+}
