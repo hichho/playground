@@ -6,6 +6,7 @@ import {initialTheme} from "@/constants/theme";
 import Head from "@/components/Head";
 import Flex from "@/components/Flex";
 import less from './index.less';
+import Slogan from "@/components/Slogan";
 
 const ErrorBoundary = lazy(() => import('@/components/ErrorBoundary'));
 export const ThemeContext = createContext<IThemeContext | null>(null);
@@ -29,6 +30,7 @@ const Layout = (props: IProps) => {
                     <Flex direction={"column"} className={less.frame} alignItems={"center"}>
                         <Flex direction={'column'} className={less.container} alignItems={'center'}>
                             <Head esVersion={esVersion} changeVersion={changeVersion}/>
+                            <Slogan/>
                             {props.children}
                         </Flex>
                     </Flex>

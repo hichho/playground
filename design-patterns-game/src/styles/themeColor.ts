@@ -3,6 +3,7 @@ import {THEME_MODE} from "@/typings/themeTyping";
 
 
 export const themeStyle = (themeMode: THEME_MODE = THEME_MODE.LIGHT) => {
+    console.log(themeMode,THEME_MODE)
     switch (themeMode) {
         case THEME_MODE.DARK:
             return DarkMode;
@@ -14,6 +15,7 @@ export const themeStyle = (themeMode: THEME_MODE = THEME_MODE.LIGHT) => {
 }
 
 export const LightMode = {
+    //head
     link_style: lightLess.link_style,
     selected_link: lightLess.selected_link,
 
@@ -23,7 +25,8 @@ export const LightMode = {
     theme_light: lightLess.theme_light,
     theme_dark: lightLess.theme_dark,
 
-
+//    slogan
+    slogan_light: lightLess.slogan_light,
 
 };
 
@@ -38,4 +41,6 @@ export const DarkMode = {
 
     theme_light: lightLess.theme_light,
     theme_dark: lightLess.theme_dark,
+
+    slogan_light: lightLess.slogan_light,
 };

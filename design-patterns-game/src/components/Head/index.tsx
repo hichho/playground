@@ -21,7 +21,6 @@ const Head: FC<IProps> = ({esVersion, changeVersion}): ReactElement => {
     return (
         <ThemeContext.Consumer>
             {value => {
-                console.log(value)
                 const style = themeStyle(value?.themeType);
                 return (<Flex className={less.frame} justify={"space-between"} alignItems={"center"}>
                     <Flex className={less.navigation} alignItems={"center"}>
