@@ -7,6 +7,8 @@ import Head from "@/components/Head";
 import Flex from "@/components/Flex";
 import less from './index.less';
 import Slogan from "@/components/Slogan";
+import {patterns} from '../patterns';
+import mixed from '../patterns';
 
 const ErrorBoundary = lazy(() => import('@/components/ErrorBoundary'));
 export const ThemeContext = createContext<IThemeContext | null>(null);
@@ -19,6 +21,9 @@ const Layout = (props: IProps) => {
     const changeVersion = useCallback(() => setVersion(
             prevState => prevState === ES_VERSION.ES6 ? ES_VERSION.PRE : ES_VERSION.ES6)
         , []);
+
+    // console.log(patterns);
+    console.log(mixed);
 
     return (
         <Suspense fallback={<Spin/>}>
