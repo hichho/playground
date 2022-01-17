@@ -17,7 +17,6 @@ app.post('/getStudents', (req, res) => {
     [ _type, _score ]= checkBody(type, score),
     resData = getData(_type, _score);
 
-  console.log(_type,_score);
 
 
   if (resData.length === 0) {
@@ -29,7 +28,7 @@ app.post('/getStudents', (req, res) => {
   res.send({ errorNo: 0, data: resData });
 });
 
-app.listen('8081', () => {
+app.listen('8080', () => {
   console.log('Server is running on PORT 8081!');
 });
 
