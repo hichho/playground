@@ -4,3 +4,5 @@
 /react-playground-buildByNext/.next/
 /react-playground-buildByNext/out/
 /blog/back-end/.github/
+/express/client/node_modules
+/express/server/node_modules
