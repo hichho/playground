@@ -1,12 +1,12 @@
 <script setup lang="ts">
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-import HelloWorld from './components/HelloWorld.vue';
-import './assets/demo.css';
-import styles_1 from './assets/test_1.module.css';
-import styles_2 from './assets/test_2.module.css';
-import demoData from './assets/demoData.json';
-import service from './services'
+import HelloWorld from '@/components/HelloWorld.vue';
+import '@/assets/demo.css';
+import styles_1 from '@/assets/test_1.module.css';
+import styles_2 from '@/assets/test_2.module.css';
+import demoData from '@/assets/demoData.json';
+import service from '@/services';
 
 const demoFunc = (str: string): void => {
   console.log(str);
