@@ -20,7 +20,8 @@ console.log(demoData);
   <HelloWorld msg="Hello Vue 3 + TypeScript + Vite"/>
   <h2 :class="styles_1.name">test_1</h2>
   <h2 :class="styles_2.name">test_2</h2>
-  <h2 :class="less.demo_content">test_3</h2>
+  <h3 class="name">test_3</h3>
+  <h3 class="demo_content">test_4</h3>
 </template>
 
 <style>
@@ -31,6 +32,12 @@ console.log(demoData);
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+</style>
+<style lang="less">
+@import "styles/demo.less";
+.name {
+  color: green;
 }
 </style>
 
