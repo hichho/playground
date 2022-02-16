@@ -1,11 +1,6 @@
 <template>
   <div class="home">
-    <!--    <img alt="Vue logo" src="../assets/logo.png">-->
-    <!--    <HelloWorld msg="Welcome to Your Vue.js App"/>-->
-
-    <button @click="goVisual()">
-      let's go visual!
-    </button>
+    <img src="../../public/image/background.png"/>
 
   </div>
 </template>
