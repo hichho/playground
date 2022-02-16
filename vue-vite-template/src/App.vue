@@ -6,13 +6,14 @@ import './assets/demo.css';
 import styles_1 from './assets/test_1.module.css';
 import styles_2 from './assets/test_2.module.css';
 import demoData from './assets/demoData.json';
-import less from './styles/demo.less';
+import service from './services'
 
 const demoFunc = (str: string): void => {
   console.log(str);
 }
 demoFunc('i am for test!');
 console.log(demoData);
+service.getData();
 </script>
 
 <template>
@@ -36,6 +37,7 @@ console.log(demoData);
 </style>
 <style lang="less">
 @import "styles/demo.less";
+
 .name {
   color: green;
 }
