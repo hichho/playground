@@ -3,7 +3,22 @@
   <div class="frame">
     <dv-loading>Loading...</dv-loading>
 
-    <img src="../../public/image/background.png"/>
+<!--    <img src="../../public/image/background.png"/>-->
+
+    <div class="normal_text">
+      我是14px 的字
+    </div>
+    <div class="small_text">
+      我是12px 的字
+    </div>
+    <div class="smallest_text">
+      我是最小的字
+    </div>
+
+    <button @click="goVisual">
+      i am going to visual!
+    </button>
+
   </div>
   </dv-full-screen-container>
 </template>
@@ -22,7 +37,7 @@ export default {
     return {};
   },
   mounted() {
-    this.getData();
+    // this.getData();
   },
   methods: {
     getData(){
@@ -33,7 +48,6 @@ export default {
       }).catch(err=>{
         console.log(err);
       })
-
     },
     goVisual() {
       Router.goVisual();

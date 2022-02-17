@@ -2,7 +2,7 @@
  * 接口代理的地址
  * @type {string}
  */
-const proxyHost = "";
+const proxyHost = "http://localhost:8000";
 
 /**
  * 需要代理的接口
