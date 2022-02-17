@@ -1,12 +1,14 @@
 <template>
-  <div class="home">
-    <img src="../../public/image/background.png"/>
+  <dv-full-screen-container>
+  <div class="frame">
+    <dv-loading>Loading...</dv-loading>
 
+    <img src="../../public/image/background.png"/>
   </div>
+  </dv-full-screen-container>
 </template>
 
 <script>
-// @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue';
 import Router from '@/router/RouterPush';
 
@@ -20,8 +22,11 @@ export default {
   },
   methods: {
     goVisual() {
-      Router.goHome();
+      Router.goVisual();
     }
   }
 };
 </script>
+<style lang="less">
+@import "../styles/home.less";
+</style>
