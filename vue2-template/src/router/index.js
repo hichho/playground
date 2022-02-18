@@ -14,7 +14,10 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+    meta:{
+      title:'测试'
+    }
   },
   {
     path: '/about',
@@ -27,7 +30,10 @@ const routes = [
   {
     path: '/visual',
     name: 'Visual',
-    component: Visual
+    component: Visual,
+    meta:{
+      title:'测试'
+    }
   }
 ];
 
