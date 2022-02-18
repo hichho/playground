@@ -1,26 +1,16 @@
 <template>
-  <dv-full-screen-container>
   <div class="frame">
-    <dv-loading>Loading...</dv-loading>
+    <dv-full-screen-container>
+      <dv-active-ring-chart :config="testConfig_1" style="width:400px;height:400px"/>
 
-<!--    <img src="../../public/image/background.png"/>-->
+      <dv-percent-pond :config="testConfig_2" style="width:200px;height:100px;"/>
 
-    <div class="normal_text">
-      我是14px 的字
-    </div>
-    <div class="small_text">
-      我是12px 的字
-    </div>
-    <div class="smallest_text">
-      我是最小的字
-    </div>
-
-    <button @click="goVisual">
-      i am going to visual!
-    </button>
-
+      <!--    <img src="../../public/image/background.png"/>-->
+      <!--    <button @click="goVisual">-->
+      <!--      i am going to visual!-->
+      <!--    </button>-->
+    </dv-full-screen-container>
   </div>
-  </dv-full-screen-container>
 </template>
 
 <script>
@@ -34,27 +24,67 @@ export default {
     HelloWorld
   },
   data() {
-    return {};
+    return {
+      testConfig_1: null,//则会使数据,
+      testConfig_2: null,//则会使数据,
+    };
   },
   mounted() {
     // this.getData();
+    this.mockData();//mock数据
   },
   methods: {
-    getData(){
-      axios.get('',{
-        demoParams:'1'
-      }).then(res=>{
+    getData() {
+      axios.get('', {
+        demoParams: '1'
+      }).then(res => {
         console.log(res)
-      }).catch(err=>{
+      }).catch(err => {
         console.log(err);
       })
     },
     goVisual() {
       Router.goVisual();
+    },
+    mockData() {
+      this.testConfig_1 = {
+        activeTimeGap: 1000,
+        radius: '50%',
+        data: [
+          {
+            name: '周口',
+            value: 55
+          },
+          {
+            name: '南阳',
+            value: 120
+          },
+          {
+            name: '西峡',
+            value: 78
+          },
+          {
+            name: '驻马店',
+            value: 66
+          },
+          {
+            name: '新乡',
+            value: 80
+          }
+        ]
+      }
+      this.testConfig_2 = {
+        value: 12
+      }
     }
   }
 };
 </script>
-<style lang="less">
-@import "../styles/home.less";
+<style lang="less" scoped>
+
+.frame {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+}
 </style>
