@@ -2,13 +2,13 @@
  * 接口代理的地址
  * @type {string}
  */
-const proxyHost = "http://localhost:8000";
+const proxyHost = "https://movie.douban.com/";
 
 /**
  * 需要代理的接口
  * @type {string[]}
  */
-const proxyApis = ["/five_colours",];
+const proxyApis = ["/ithil_j"];
 
 /**
  * 构建对象

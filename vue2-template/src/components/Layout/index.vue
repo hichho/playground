@@ -3,6 +3,7 @@
     <div class="background_image">
       <img src="../../../public/image/title_background.png" class="title"/>
       <Navigation/>
+
       <router-view></router-view>
     </div>
   </div>
@@ -14,6 +15,9 @@ export default {
   name: 'Layout',
   components: {
     Navigation
+  },
+  created() {
+
   }
 }
 </script>
@@ -22,7 +26,6 @@ export default {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-
   .background_image {
     background-image: url('/image/background.png');
     background-repeat: no-repeat;

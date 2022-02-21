@@ -1,30 +1,63 @@
 <template>
   <div class="container">
-    Location
+<!--        left-->
+    <LocationDeviceList></LocationDeviceList>
+
+
+<!--        center-->
+    <div class="center">
+
+    </div>
+    <!--    right-->
+    <div class="right">
+
+    </div>
   </div>
 </template>
 
 <script>
+import LocationDeviceList from "@/components/LocationDeviceList";
 
 export default {
   name: 'Location',
   components: {
+    LocationDeviceList
   },
   data() {
-    return {
-    };
+    return {};
   },
+
   mounted() {
+
   },
-  methods: {
-  }
+  methods: {}
 };
 </script>
 <style lang="less" scoped>
-.container{
+.container {
   display: flex;
   flex-grow: 1;
+  justify-content: space-around;
   z-index: 10;
-  color:white;
+  color: white;
+  padding: 0 1vw;
+
+  .left {
+    width: 30vw;
+    background: rgba(244, 244, 244, 0.5);
+    height: calc(100vh - 8vw);
+  }
+
+  .center {
+    width: 30vw;
+    background: rgba(244, 244, 244, 0.5);
+    height: calc(100vh - 8vw);
+  }
+
+  .right {
+    width: 30vw;
+    background: rgba(244, 244, 244, 0.5);
+    height: calc(100vh - 8vw);
+  }
 }
 </style>
