@@ -1,7 +1,7 @@
 <template>
   <div class="navigation">
     <!--  left-->
-    <div class="left_area">
+    <div class="left-area">
     <span class="menu_item" :style="{'color':getStyle('/')}"
           @click="handleRouterClick('/')">
 定位
@@ -12,7 +12,7 @@
     </span>
     </div>
     <!--  right-->
-    <div class="right_area">
+    <div class="right-area">
       <span class="menu_item"  :style="{'color':getStyle('/call')}"
             @click="handleRouterClick('/call')">
 报警
@@ -69,7 +69,7 @@ export default {
   display: flex;
   justify-content: space-between;
 
-  .left_area{
+  .left-area{
     width:20vw;
     height: 7.4vw;
     display: flex;
@@ -80,7 +80,7 @@ export default {
       padding: 12px 24px;
     }
   }
-  .right_area{
+  .right-area{
     width:20vw;
     height: 7.4vw;
     display: flex;
