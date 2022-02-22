@@ -43,14 +43,14 @@ export default {
   padding: 0 1vw;
 
   .center {
-    width: 30vw;
+    width: 48vw;
     background: rgba(244, 244, 244, 0.5);
     height: calc(100vh - 9vw);
     margin-top: 1vw;
   }
 
   .right {
-    width: 30vw;
+    width: 21vw;
     background: rgba(244, 244, 244, 0.5);
     height: calc(100vh - 9vw);
     margin-top: 1vw;

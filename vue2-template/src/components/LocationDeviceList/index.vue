@@ -4,15 +4,12 @@
     <dv-loading v-show="loading">获取数据中...</dv-loading>
 
     <div v-show="!loading" class="container">
-      <Title title-text="demo"></Title>
+      <Title title-text="设备列表"></Title>
       <div class="list">
-        <div class="list-item" v-for="(item) in data" :key="item.id">
+        <div :class="getClass(index)" v-for="(item,index) in data" :key="item.id">
           {{ item.kind_cn }}
         </div>
       </div>
-      <!--    <button @click="checkData">-->
-      <!--      checkData-->
-      <!--    </button>-->
     </div>
   </div>
 </template>
@@ -51,6 +48,9 @@ export default {
         });
       })
     },
+    getClass(index){
+      return index%2===0?'dark-item':'light-item'
+    },
     checkData() {
       console.log(this.loading, this.data)
     }
@@ -59,7 +59,7 @@ export default {
 </script>
 <style lang="less" scoped>
 .frame {
-  width: 30vw;
+  width: 21vw;
   height: calc(100vh - 9vw);
   display: flex;
   justify-content: center;
@@ -68,7 +68,7 @@ export default {
   margin-top: 12px;
 
   .container {
-    width: 30vw;
+    width: 21vw;
     border: 2px solid #00f3fe;
     height: calc(100vh - 9vw);
     border-radius: 12px;
@@ -80,17 +80,28 @@ export default {
   }
 
   .list {
-    padding-top: 2vw;
-    width: 30vw;
+    width: 21vw;
     height: calc(100vh - 9vw);
     //background: gold;
     border-radius: 12px;
     overflow-y: scroll;
     overflow-x: hidden;
 
-    .list-item {
+    .light-item {
       width: 100%;
       height:4vw;
+      background:rgba(0,64,99,0.7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .dark-item{
+      width:100%;
+      height: 4vw;
+      background: #002f55;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 }

@@ -19,7 +19,7 @@ export default {
   font-size: 18px;
   background-color: #004674;
   margin-top: -1.45vw;
-  width:12vw;
+  width:8vw;
   height: 0.4vw;
   display: flex;
   justify-content: center;
