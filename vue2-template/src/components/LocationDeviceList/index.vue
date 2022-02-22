@@ -1,16 +1,20 @@
 <template>
   <div class="frame">
-    <button @click="checkData">
-      checkData
-    </button>
+<!--    <button @click="checkData">-->
+<!--      checkData-->
+<!--    </button>-->
+    <Title title-text="demo"></Title>
   </div>
 </template>
 <script>
 import axios from "@/api/axios";
-import {Message} from 'element-ui';
+import Title from '@/components/Title';
 
 export default {
   name: 'LocationDeviceList',
+  components:{
+    Title
+  },
   data() {
     return {
       sourceData:null,
@@ -46,8 +50,12 @@ export default {
 <style lang="less" scoped>
 .frame {
   width: 30vw;
-  background: rgba(244, 244, 244, 0.5);
-  height: calc(100vh - 8vw);
+  border: 2px solid #00f3fe;
+  height: calc(100vh - 9vw);
+  border-radius: 12px;
+  margin-top: 1vw;
+  display: flex;
+  justify-content: center;
 }
 
 </style>

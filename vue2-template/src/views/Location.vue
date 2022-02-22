@@ -42,22 +42,18 @@ export default {
   color: white;
   padding: 0 1vw;
 
-  .left {
-    width: 30vw;
-    background: rgba(244, 244, 244, 0.5);
-    height: calc(100vh - 8vw);
-  }
-
   .center {
     width: 30vw;
     background: rgba(244, 244, 244, 0.5);
-    height: calc(100vh - 8vw);
+    height: calc(100vh - 9vw);
+    margin-top: 1vw;
   }
 
   .right {
     width: 30vw;
     background: rgba(244, 244, 244, 0.5);
-    height: calc(100vh - 8vw);
+    height: calc(100vh - 9vw);
+    margin-top: 1vw;
   }
 }
 </style>
