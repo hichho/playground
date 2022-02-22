@@ -9,7 +9,7 @@ export default {
   },
 }
 </script>
-<style>
+<style lang="less" scoped>
 .title_text {
   padding: 16px 28px;
   color: #FFFFFF;
