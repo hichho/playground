@@ -31,7 +31,20 @@
       </div>
       <!--    hardware-->
       <div class="hardware">
+        <div class="hardware-left">
+          <PropertyTitle title="硬件资产"/>
+          <div class="hardware-table-title">
+            <span class="end-title">总数</span>
+            <span>未注册</span>
+          </div>
 
+        </div>
+        <div class="hardware-center">
+          2
+        </div>
+        <div class="hardware-right">
+          3
+        </div>
       </div>
       <!--  nat子网  -->
       <div class="nat">
@@ -45,8 +58,11 @@
   </div>
 </template>
 <script>
+import PropertyTitle from '@/components/PropertyTitle';
+
 export default {
   name: 'Property',
+  components: { PropertyTitle },
   data() {
     return {
       options: [ {
@@ -70,6 +86,14 @@ export default {
         { id: '3', label: '业务系统', value: '346' },
         { id: '4', label: '云资产', value: '387' },
         { id: '5', label: '终端用户', value: '5120' },
+      ],
+      //hardware-sum
+      hardware: [
+        { id: '1', label: '计算机设备', sumValue: 11510, unRegisteredSum: 1340 },
+        { id: '2', label: '网络设备', sumValue: 11510, unRegisteredSum: 1340 },
+        { id: '3', label: '安全设备', sumValue: 11510, unRegisteredSum: 1340 },
+        { id: '4', label: '办公设备', sumValue: 11510, unRegisteredSum: 1340 },
+        { id: '5', label: '未识别设备', sumValue: 11510, unRegisteredSum: 1340 },
       ],
     };
   },
@@ -96,7 +120,6 @@ export default {
   .head {
     .head-left {
       width: 100%;
-      //background: gold;
       position: relative;
       z-index: 5;
 
@@ -137,7 +160,7 @@ export default {
     .sum {
       width: 100%;
       //border: 1px solid red;
-      height: 48px;
+      height: 40px;
       display: flex;
       flex-direction: row;
       justify-content: space-around;
@@ -186,20 +209,52 @@ export default {
     }
 
     .hardware {
-      width: 100%;
-      height: 120px;
+      width: 99%;
+      height: 128px;
       border: 1px solid red;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+
+      .hardware-left {
+        width: 32%;
+        height: 100%;
+
+        .hardware-table-title {
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          width: 100%;
+
+          .end-title {
+            margin-left: 24px;
+          }
+        }
+      }
+
+      .hardware-center {
+        width: 32%;
+        height: 100%;
+        background: rgba(12, 233, 12, 0.3);
+      }
+
+      .hardware-right {
+        background: rgba(12, 122, 234, 0.3);
+        width: 32%;
+        height: 100%;
+      }
     }
 
     .nat {
       width: 100%;
-      height: 120px;
+      height: 128px;
       border: 1px solid red;
     }
 
     .sys {
       width: 100%;
-      height: 120px;
+      height: 128px;
       border: 1px solid red;
     }
   }
