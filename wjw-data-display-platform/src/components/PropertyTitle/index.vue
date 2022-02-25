@@ -7,7 +7,8 @@
       {{ title }}
     </div>
 
-    <div class="title-right">
+    <div class="title-right"
+         v-if="hasMore">
       <div>更多</div>
       <img src="../../../public/images/more.png" class="more-icon"/>
     </div>
@@ -16,7 +17,7 @@
 <script>
 export default {
   name: 'PropertyTitle',
-  props: { title: String }
+  props: { title: String ,hasMore:Boolean}
 };
 </script>
 <style lang="less" scoped>
@@ -29,7 +30,8 @@ export default {
   height: 16px;
   display: flex;
   justify-content: space-between;
-
+  color: #fff;
+  text-indent: 20px;
   .property-title-bg {
     width: 100%;
     height: 16px;

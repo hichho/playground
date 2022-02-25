@@ -1,19 +1,18 @@
 <template>
   <div class="container">
-
     <Property/>
-    <div class="part-2">2</div>
+    <Security/>
     <div class="part-3">3</div>
-
   </div>
 </template>
 <script>
-
 import Property from '@/components/Property';
+import Security from "@/components/Security";
 
 export default {
   name: 'LeftPart',
   components: {
+    Security,
     Property
   },
 };
@@ -27,11 +26,6 @@ export default {
   //background: rgba(12, 12, 120, 0.3);
   display: flex;
   flex-direction: column;
-  .part-2 {
-    background: rgba(12, 120, 12, 0.3);
-    height: 480px;
-  }
-
   .part-3 {
     background: gray;
     height: 120px;

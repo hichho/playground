@@ -1,20 +1,22 @@
 <template>
   <div class="frame">
-    <LeftPart/>
-    <CenterPart/>
-    <RightPart/>
+    <LeftPart />
+    <CenterPart />
+    <RightPart />
   </div>
 </template>
 <script>
-import LeftPart from '@/views/LeftPart';
-import CenterPart from '@/views/CenterPart';
-import RightPart from '@/views/RightPart';
+import LeftPart from "@/views/LeftPart";
+import CenterPart from "@/views/CenterPart";
+import RightPart from "@/views/RightPart";
 
 export default {
-  name: 'Index',
+  name: "Index",
   components: {
-    LeftPart, CenterPart, RightPart
-  }
+    LeftPart,
+    CenterPart,
+    RightPart,
+  },
 };
 </script>
 <style lang="less" scoped>
