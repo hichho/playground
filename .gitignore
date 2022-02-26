@@ -6,3 +6,6 @@
 /blog/back-end/.github/
 /express/client/node_modules
 /express/server/node_modules
+**/*.exe
+**/*.pdb
+/rust/guessing_game/target/
