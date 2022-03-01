@@ -9,3 +9,4 @@
 **/*.exe
 **/*.pdb
 /rust/guessing_game/target/
+/rust/variables/target/
