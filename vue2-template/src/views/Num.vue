@@ -3,32 +3,32 @@
     <div>
       <img src="../../public/image/spotify.png"
            style="width:42px;height: 42px;"/>
-      <SelfIncreasingNum class-name="num" :value="9666" init-percent="75"
-                         :isUseWebApiAnimation="true" unit="12"
+      <SelfIncreasingNum class-name="num" :value="1"
+                         :init-value="0"
       />
     </div>
 
     <div>
       <img src="../../public/image/twitter.png"
            style="width:42px;height: 42px;"/>
-<!--      <SelfIncreasingNum/>-->
+      <!--      <SelfIncreasingNum/>-->
     </div>
 
     <div>
       <img src="../../public/image/youtube.png"
            style="width:42px;height: 42px;"/>
-<!--      <SelfIncreasingNum/>-->
+      <!--      <SelfIncreasingNum/>-->
     </div>
 
   </div>
 </template>
 <script>
-import SelfIncreasingNum from "@/components/SelfIncreasingNum";
+import SelfIncreasingNum from '@/components/SelfIncreasingNum';
 
 export default {
   name: 'Num',
-  components: {SelfIncreasingNum}
-}
+  components: { SelfIncreasingNum }
+};
 </script>
 <style scoped lang="less">
 .frame {
