@@ -8,9 +8,15 @@ export default defineConfig({
     resolve: {
         alias: [
             {
-                find: '@',
-                replacement: resolve(__dirname, './src'),
+                find: "@",
+                replacement: resolve(__dirname, "./src"),
             },
         ],
-    }
+    },
+    server:{
+        proxy:{
+            "/app": "http://zcse-index.tmp.kepai365.ltd/"
+        }
+    },
+    base:'./'
 })
