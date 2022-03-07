@@ -1,23 +1,3 @@
-<script lang="ts" setup>
-import {reactive} from "vue";
-
-const keywordContainer = reactive({
-  keyword: ''
-});
-</script>
-<template>
-  <div class="frame">
-    <img src="/image/logo.png" class="logo"/>
-    <div class="search">
-      <input :value="keywordContainer.keyword"
-             placeholder="请输入关键字"
-      />
-      <img src="/image/search.png" class="icon"/>
-    </div>
-    <router-view/>
-  </div>
-</template>
-<style lang="less" scoped>
 @import "./src/styles/global.less";
 
 .frame {
@@ -33,6 +13,7 @@ const keywordContainer = reactive({
   .logo {
     width: 280px;
     object-fit: contain;
+    cursor: pointer;
   }
 
   .search {
@@ -73,4 +54,3 @@ const keywordContainer = reactive({
     }
   }
 }
-</style>
