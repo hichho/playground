@@ -16,14 +16,13 @@ export default defineComponent({
         style: {
             type: Object as PropType<CSSProperties>,
         },
-        // onImageClick: {
-        //     type: Function as PropType<(value: string) => void>,
-        // }
+        onImageClick: {
+            type: Function as PropType<() => void>,
+        }
     },
-    emits:['onImageClick'],
-    setup(props, context) {
+    setup(props) {
         const handleChildClick = () => {
-            context.emit('onImageClick', '子组件回调的值');
+            props.onImageClick && props.onImageClick();
         }
         return () => (
             <img src={props.src} alt={props.alt}
