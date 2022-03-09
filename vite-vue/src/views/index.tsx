@@ -1,13 +1,20 @@
-import {defineComponent, reactive, toRef, toRefs} from "vue";
+import {defineComponent} from "vue";
 import {useRequest} from "vue-request";
 
+interface IResult {
+    code: number,
+    data: {
+        createTime: string
+    }[],
+}
 
 export default defineComponent({
     name: 'Index',
     setup() {
         const service = '/app/banner/list';
-        const {data, loading} = useRequest(service);
-        console.log(loading?.value, data?.value);
+        const {data, loading} = useRequest<IResult>(service);
+        console.log(loading?.value);
+        console.log(loading)
         return () => (
             <>
                 <h1>{loading?.value ? '1' : '2'}</h1>
