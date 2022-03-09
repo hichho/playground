@@ -4,6 +4,8 @@
   </div>
 </template>
 <script>
+import Num from '@/views/Num';
+
 export default {
   name: 'SelfIncreasingNum',
   props: {
@@ -74,12 +76,17 @@ export default {
           .split('.')[1]?.length;
       const roundValue_origin = this.initValue.toString()
           .split('.')[1]?.length;
-      const roundValue = roundValue_target ? roundValue_target : roundValue_origin;
+      let roundValue = roundValue_target ?? roundValue_origin;
+      if (this.value < 17) {
+        roundValue = 1;
+      }
+      //todo 自己调用自己，如果rlt 为0，则一直查找
       if (this.unit) {
         rlt = this.unit;
       } else {
-        rlt = Number(((this.value - (this.initValue ?? 0)) / 17).toFixed(roundValue ?? 0));
+        rlt = Number(this.toFixed(((this.value - (this.initValue ?? 0)) / 17), roundValue ?? 0));
       }
+      console.log(rlt);
       return rlt;
     },
     /**
@@ -122,7 +129,25 @@ export default {
       } catch (e) {
       }
       return Number(s1.replace('.', '')) * Number(s2.replace('.', '')) / Math.pow(10, m);
+    },
+    /**
+     * not round
+     * @param num
+     * @param decimal
+     * @returns {string}
+     */
+    toFixed(num, decimal) {
+      num = num.toString();
+      let index = num.indexOf('.');
+      if (index !== -1) {
+        num = num.substring(0, decimal + index + 1);
+      } else {
+        num = num.substring(0);
+      }
+      return Number(parseFloat(num)
+          .toFixed(decimal));
     }
+
   }
 };
 </script>

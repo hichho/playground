@@ -33,20 +33,7 @@ export default {
   },
   methods: {
     getMockData() {
-      axios.get('/ithil_j/activity/movie_annual2021', {
-        params: {with_widgets: '1'}
-      }).then(res => {
-        console.log(res.res.widgets)
-        if (res.status.code === 200 && Array.isArray(res?.res?.widgets)) {
-          this.data = res.res.widgets;
-          this.loading = false;
-        }
-      }).catch(error => {
-        this.notify({
-          message: error, center: true
-          , duration: 1500
-        });
-      })
+
     },
     getClass(index){
       return index%2===0?'dark-item':'light-item'

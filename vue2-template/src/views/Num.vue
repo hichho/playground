@@ -3,7 +3,7 @@
     <div>
       <img src="../../public/image/spotify.png"
            style="width:42px;height: 42px;"/>
-      <SelfIncreasingNum class-name="num" :value="1"
+      <SelfIncreasingNum class-name="num" :value="2"
                          :init-value="0"
       />
     </div>
