@@ -1,7 +1,15 @@
-<script setup lang="ts">
+<script lang="ts">
+import {RequestConfig} from 'vue-request';
+
+export default {
+  components: {RequestConfig}
+}
+
 </script>
 <template>
-  <router-view/>
+  <RequestConfig>
+    <router-view/>
+  </RequestConfig>
 </template>
 <style lang="less">
 @import "styles/global.less";

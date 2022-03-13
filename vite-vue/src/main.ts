@@ -7,8 +7,7 @@ const app = createApp(App);
 app.use(router);
 //option about request
 setGlobalOptions({
-    // manual: true,
-    // ...
+
 });
 
 app.mount('#app');

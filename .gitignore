@@ -11,3 +11,4 @@
 /rust/guessing_game/target/
 /rust/variables/target/
 /vite-vue/node_modules
+.vscode/settings.json
