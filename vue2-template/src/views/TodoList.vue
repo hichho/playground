@@ -41,7 +41,7 @@ export default {
   computed: {
     getColor() {
       return function(index) {
-        return Number(index) === this.value ? { color: 'white' } : undefined;
+        return Number(index) === this.value ? { color: 'white', fontWeight: 'bold' } : undefined;
       };
     },
     filterList() {
