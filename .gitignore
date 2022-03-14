@@ -12,3 +12,4 @@
 /rust/variables/target/
 /vite-vue/node_modules
 .vscode/settings.json
+/ant-vue/node_modules/
