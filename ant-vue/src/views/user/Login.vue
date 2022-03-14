@@ -161,6 +161,10 @@ export default {
       // this.form.resetFields()
     },
     handleSubmit (e) {
+      console.log('login')
+
+      return;
+
       e.preventDefault()
       const {
         form: { validateFields },
