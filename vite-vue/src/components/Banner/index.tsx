@@ -1,5 +1,5 @@
 import {defineComponent, watch} from "vue";
-import {useBanner} from "@/api/homeApi";
+import {useBannerApi} from "@/api/homeApi";
 import {Spin, Carousel} from 'ant-design-vue';
 import Image from '@/components/Image';
 import 'ant-design-vue/es/spin/style/index.css';
@@ -9,7 +9,7 @@ import less from './index.module.less';
 export default defineComponent({
     name: 'Banner',
     setup() {
-        const {loading, data} = useBanner();
+        const {loading, data} = useBannerApi();
         // watch(data, (newValue, oldValue) => {
         //     console.log(newValue, oldValue);
         // })
@@ -18,7 +18,6 @@ export default defineComponent({
                 {loading.value && <div class={less.frame}>
                   <Spin/>
                 </div>}
-
                 {
                     !loading.value &&
                   <div class={less.frame}>

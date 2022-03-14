@@ -1,5 +1,6 @@
-import {defineComponent, watch} from "vue";
+import {defineComponent} from "vue";
 import Banner from "@/components/Banner";
+import News from "@/components/News";
 
 export default defineComponent({
     name: 'Index',
@@ -8,6 +9,7 @@ export default defineComponent({
         return () => (
             <div>
                 <Banner/>
+                <News/>
             </div>
         )
     }

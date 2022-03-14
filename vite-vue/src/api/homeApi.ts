@@ -4,9 +4,9 @@ interface IBannerResult {
     id: number,
     pic: string | undefined
 }
-const useBanner=()=>{
+const useBannerApi=()=>{
     return useApi<IResult<IBannerResult[]>>('/app/banner/list');
 }
 export  {
-    useBanner
+    useBannerApi
 }
