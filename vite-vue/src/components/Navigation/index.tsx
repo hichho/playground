@@ -11,12 +11,20 @@ export default defineComponent({
         }
     },
     setup(props) {
+
+
+        const handleClick = () => {
+            console.log(123)
+        }
+
         return () => (
             <div class={less.frame}>
                 <div class={less.container}>
                     {Navigation.map(item => {
                         return (
-                            <div class={less.navi_item}>{item.name}</div>
+                            <div class={less.navi_item}
+                                 onClick={handleClick}
+                            >{item.name}</div>
                         )
                     })}
                 </div>
