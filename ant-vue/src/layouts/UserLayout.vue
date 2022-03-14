@@ -2,9 +2,6 @@
 
   <div id="userLayout" :class="['user-layout-wrapper', isMobile && 'mobile']">
     <div class="container">
-      <div class="user-layout-lang">
-        <select-lang class="select-lang-trigger" />
-      </div>
       <div class="user-layout-content">
         <div class="top">
           <div class="header">
@@ -18,7 +15,7 @@
           </div>
         </div>
 
-        <router-view />
+        <router-view/>
 
         <div class="footer">
           <div class="links">
@@ -44,7 +41,7 @@ export default {
   components: {
     SelectLang
   },
-  mixins: [deviceMixin],
+  mixins: [ deviceMixin ],
   mounted () {
     document.body.classList.add('userLayout')
   },
@@ -75,26 +72,8 @@ export default {
     //padding: 50px 0 84px;
     position: relative;
 
-    .user-layout-lang {
-      width: 100%;
-      height: 40px;
-      line-height: 44px;
-      text-align: right;
-
-      .select-lang-trigger {
-        cursor: pointer;
-        padding: 12px;
-        margin-right: 24px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 18px;
-        vertical-align: middle;
-      }
-    }
-
     .user-layout-content {
-      padding: 32px 0 24px;
+      padding: 56px 0 24px;
 
       .top {
         text-align: center;
@@ -129,6 +108,7 @@ export default {
             top: 2px;
           }
         }
+
         .desc {
           font-size: 14px;
           color: rgba(0, 0, 0, 0.45);
@@ -154,14 +134,17 @@ export default {
         .links {
           margin-bottom: 8px;
           font-size: 14px;
+
           a {
             color: rgba(0, 0, 0, 0.45);
             transition: all 0.3s;
+
             &:not(:last-child) {
               margin-right: 40px;
             }
           }
         }
+
         .copyright {
           color: rgba(0, 0, 0, 0.45);
           font-size: 14px;
