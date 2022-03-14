@@ -13,7 +13,8 @@ function resolve (dir) {
 function getGitHash () {
   try {
     return GitRevision.version()
-  } catch (e) {}
+  } catch (e) {
+  }
   return 'unknown'
 }
 
@@ -70,16 +71,19 @@ const vueConfig = {
       .use('file-loader')
       .loader('file-loader')
       .options({
-        name: 'assets/[name].[hash:8].[ext]'
+        name: 'assets/[name].[hash:8].[ext]',
+        // todo:偏方 https://github.com/vueComponent/ant-design-vue-pro/pull/1285/files
+        esModule: false
       })
 
     // if prod is on
     // assets require on cdn
     if (isProd) {
-      config.plugin('html').tap(args => {
-        args[0].cdn = assetsCDN
-        return args
-      })
+      config.plugin('html')
+        .tap(args => {
+          args[0].cdn = assetsCDN
+          return args
+        })
     }
   },
 
