@@ -1,0 +1,968 @@
+{
+  "id": "1126415",
+  "name": "可视化图标库",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "3181281",
+      "name": "单位部门",
+      "font_class": "department",
+      "unicode": "b137",
+      "unicode_decimal": 45367
+    },
+    {
+      "icon_id": "3181459",
+      "name": "通知通告",
+      "font_class": "notice",
+      "unicode": "b136",
+      "unicode_decimal": 45366
+    },
+    {
+      "icon_id": "3181253",
+      "name": "安防设备",
+      "font_class": "security",
+      "unicode": "b135",
+      "unicode_decimal": 45365
+    },
+    {
+      "icon_id": "13633811",
+      "name": "通报管理",
+      "font_class": "notification",
+      "unicode": "b134",
+      "unicode_decimal": 45364
+    },
+    {
+      "icon_id": "3181290",
+      "name": "电脑01",
+      "font_class": "computer1",
+      "unicode": "b133",
+      "unicode_decimal": 45363
+    },
+    {
+      "icon_id": "3181570",
+      "name": "用户信息",
+      "font_class": "user-info",
+      "unicode": "b132",
+      "unicode_decimal": 45362
+    },
+    {
+      "icon_id": "3181352",
+      "name": "级联管理",
+      "font_class": "cascade",
+      "unicode": "b131",
+      "unicode_decimal": 45361
+    },
+    {
+      "icon_id": "21281387",
+      "name": "文件下载",
+      "font_class": "file",
+      "unicode": "b130",
+      "unicode_decimal": 45360
+    },
+    {
+      "icon_id": "9811139",
+      "name": "门禁",
+      "font_class": "menjin",
+      "unicode": "b129",
+      "unicode_decimal": 45353
+    },
+    {
+      "icon_id": "20999166",
+      "name": "空调",
+      "font_class": "kongtiao",
+      "unicode": "b128",
+      "unicode_decimal": 45352
+    },
+    {
+      "icon_id": "3181563",
+      "name": "用户01",
+      "font_class": "user03",
+      "unicode": "b127",
+      "unicode_decimal": 45351
+    },
+    {
+      "icon_id": "3181273",
+      "name": "常用报告",
+      "font_class": "report",
+      "unicode": "b126",
+      "unicode_decimal": 45350
+    },
+    {
+      "icon_id": "3181464",
+      "name": "网络",
+      "font_class": "internet1",
+      "unicode": "b125",
+      "unicode_decimal": 45349
+    },
+    {
+      "icon_id": "16608225",
+      "name": "定位",
+      "font_class": "test",
+      "unicode": "b124",
+      "unicode_decimal": 45348
+    },
+    {
+      "icon_id": "21772731",
+      "name": "协调联动",
+      "font_class": "xietiaoliandong",
+      "unicode": "b123",
+      "unicode_decimal": 45347
+    },
+    {
+      "icon_id": "21779416",
+      "name": "手机",
+      "font_class": "phone03",
+      "unicode": "b122",
+      "unicode_decimal": 45346
+    },
+    {
+      "icon_id": "21596274",
+      "name": "播放",
+      "font_class": "play",
+      "unicode": "b121",
+      "unicode_decimal": 45345
+    },
+    {
+      "icon_id": "21596275",
+      "name": "音频播放",
+      "font_class": "audio",
+      "unicode": "b120",
+      "unicode_decimal": 45344
+    },
+    {
+      "icon_id": "21596276",
+      "name": "预览",
+      "font_class": "preview01",
+      "unicode": "b119",
+      "unicode_decimal": 45337
+    },
+    {
+      "icon_id": "3181302",
+      "name": "风险预警",
+      "font_class": "risk-warning",
+      "unicode": "b118",
+      "unicode_decimal": 45336
+    },
+    {
+      "icon_id": "3181432",
+      "name": "设置",
+      "font_class": "set",
+      "unicode": "b117",
+      "unicode_decimal": 45335
+    },
+    {
+      "icon_id": "21419563",
+      "name": "告警",
+      "font_class": "warning01",
+      "unicode": "b116",
+      "unicode_decimal": 45334
+    },
+    {
+      "icon_id": "3181250",
+      "name": "TMD管理",
+      "font_class": "tmd-manage",
+      "unicode": "b115",
+      "unicode_decimal": 45333
+    },
+    {
+      "icon_id": "3181292",
+      "name": "定位",
+      "font_class": "position",
+      "unicode": "b114",
+      "unicode_decimal": 45332
+    },
+    {
+      "icon_id": "3181537",
+      "name": "文件",
+      "font_class": "file01",
+      "unicode": "b113",
+      "unicode_decimal": 45331
+    },
+    {
+      "icon_id": "3181539",
+      "name": "系统配置",
+      "font_class": "system-deploy",
+      "unicode": "b112",
+      "unicode_decimal": 45330
+    },
+    {
+      "icon_id": "21394650",
+      "name": "温度",
+      "font_class": "temperature",
+      "unicode": "b111",
+      "unicode_decimal": 45329
+    },
+    {
+      "icon_id": "10008654",
+      "name": "水浸",
+      "font_class": "water",
+      "unicode": "b110",
+      "unicode_decimal": 45328
+    },
+    {
+      "icon_id": "18672957",
+      "name": "湿度",
+      "font_class": "humidity",
+      "unicode": "b109",
+      "unicode_decimal": 45321
+    },
+    {
+      "icon_id": "20955935",
+      "name": "下降",
+      "font_class": "decline01",
+      "unicode": "b108",
+      "unicode_decimal": 45320
+    },
+    {
+      "icon_id": "3181390",
+      "name": "配置管理",
+      "font_class": "configuration02",
+      "unicode": "b107",
+      "unicode_decimal": 45319
+    },
+    {
+      "icon_id": "3181541",
+      "name": "下降",
+      "font_class": "decline",
+      "unicode": "b106",
+      "unicode_decimal": 45318
+    },
+    {
+      "icon_id": "19729468",
+      "name": "上升",
+      "font_class": "rise",
+      "unicode": "b105",
+      "unicode_decimal": 45317
+    },
+    {
+      "icon_id": "3181269",
+      "name": "查看图片",
+      "font_class": "visit",
+      "unicode": "b104",
+      "unicode_decimal": 45316
+    },
+    {
+      "icon_id": "3181417",
+      "name": "删除",
+      "font_class": "delete01",
+      "unicode": "b103",
+      "unicode_decimal": 45315
+    },
+    {
+      "icon_id": "16520298",
+      "name": "终端风险",
+      "font_class": "terminal02",
+      "unicode": "b102",
+      "unicode_decimal": 45314
+    },
+    {
+      "icon_id": "16325624",
+      "name": "水滴",
+      "font_class": "shuidi",
+      "unicode": "b101",
+      "unicode_decimal": 45313
+    },
+    {
+      "icon_id": "3181427",
+      "name": "涉及机构",
+      "font_class": "agencies",
+      "unicode": "b100",
+      "unicode_decimal": 45312
+    },
+    {
+      "icon_id": "11357464",
+      "name": "首页",
+      "font_class": "home02",
+      "unicode": "b099",
+      "unicode_decimal": 45209
+    },
+    {
+      "icon_id": "16317169",
+      "name": "数据泄露",
+      "font_class": "disclose",
+      "unicode": "b098",
+      "unicode_decimal": 45208
+    },
+    {
+      "icon_id": "3181425",
+      "name": "设备",
+      "font_class": "equipment",
+      "unicode": "b097",
+      "unicode_decimal": 45207
+    },
+    {
+      "icon_id": "3181527",
+      "name": "违规外联",
+      "font_class": "outreach1",
+      "unicode": "b096",
+      "unicode_decimal": 45206
+    },
+    {
+      "icon_id": "5967889",
+      "name": "攻击",
+      "font_class": "attack",
+      "unicode": "b095",
+      "unicode_decimal": 45205
+    },
+    {
+      "icon_id": "9156122",
+      "name": "漏洞通报",
+      "font_class": "vulnerability1",
+      "unicode": "b094",
+      "unicode_decimal": 45204
+    },
+    {
+      "icon_id": "16255242",
+      "name": "服务器组",
+      "font_class": "server01",
+      "unicode": "b093",
+      "unicode_decimal": 45203
+    },
+    {
+      "icon_id": "16255243",
+      "name": "网络设备",
+      "font_class": "internet01",
+      "unicode": "b092",
+      "unicode_decimal": 45202
+    },
+    {
+      "icon_id": "3181616",
+      "name": "箭头01",
+      "font_class": "arrow-top",
+      "unicode": "b091",
+      "unicode_decimal": 45201
+    },
+    {
+      "icon_id": "14714652",
+      "name": "解绑",
+      "font_class": "unbound",
+      "unicode": "b090",
+      "unicode_decimal": 45200
+    },
+    {
+      "icon_id": "3181604",
+      "name": "准入logo",
+      "font_class": "zhunru-logo",
+      "unicode": "b089",
+      "unicode_decimal": 45193
+    },
+    {
+      "icon_id": "3346012",
+      "name": "登录",
+      "font_class": "login01",
+      "unicode": "b088",
+      "unicode_decimal": 45192
+    },
+    {
+      "icon_id": "14477030",
+      "name": "第三方",
+      "font_class": "other01",
+      "unicode": "b087",
+      "unicode_decimal": 45191
+    },
+    {
+      "icon_id": "14477031",
+      "name": "核心平台",
+      "font_class": "core",
+      "unicode": "b086",
+      "unicode_decimal": 45190
+    },
+    {
+      "icon_id": "14477032",
+      "name": "运维安全",
+      "font_class": "safety02",
+      "unicode": "b085",
+      "unicode_decimal": 45189
+    },
+    {
+      "icon_id": "3181272",
+      "name": "病毒检测",
+      "font_class": "virus-detection",
+      "unicode": "b084",
+      "unicode_decimal": 45188
+    },
+    {
+      "icon_id": "3181252",
+      "name": "安全设备",
+      "font_class": "safety1",
+      "unicode": "b083",
+      "unicode_decimal": 45187
+    },
+    {
+      "icon_id": "3181426",
+      "name": "设施管理",
+      "font_class": "facilities",
+      "unicode": "b082",
+      "unicode_decimal": 45186
+    },
+    {
+      "icon_id": "3181435",
+      "name": "审计logo",
+      "font_class": "shenji-logo",
+      "unicode": "b081",
+      "unicode_decimal": 45185
+    },
+    {
+      "icon_id": "3181465",
+      "name": "网络边界",
+      "font_class": "internet-border",
+      "unicode": "b080",
+      "unicode_decimal": 45184
+    },
+    {
+      "icon_id": "3181475",
+      "name": "网站系统",
+      "font_class": "system",
+      "unicode": "b079",
+      "unicode_decimal": 45177
+    },
+    {
+      "icon_id": "3181476",
+      "name": "网络资产",
+      "font_class": "internet-assets",
+      "unicode": "b078",
+      "unicode_decimal": 45176
+    },
+    {
+      "icon_id": "14277638",
+      "name": "剩余风险",
+      "font_class": "risk01",
+      "unicode": "b077",
+      "unicode_decimal": 45175
+    },
+    {
+      "icon_id": "3181562",
+      "name": "引导页",
+      "font_class": "guide-pages",
+      "unicode": "b076",
+      "unicode_decimal": 45174
+    },
+    {
+      "icon_id": "13010097",
+      "name": "后台管理",
+      "font_class": "backstage",
+      "unicode": "b075",
+      "unicode_decimal": 45173
+    },
+    {
+      "icon_id": "3181257",
+      "name": "安全审计",
+      "font_class": "security-audit",
+      "unicode": "b074",
+      "unicode_decimal": 45172
+    },
+    {
+      "icon_id": "3181607",
+      "name": "资产管理",
+      "font_class": "zichanguanli",
+      "unicode": "b073",
+      "unicode_decimal": 45171
+    },
+    {
+      "icon_id": "11166893",
+      "name": "定位",
+      "font_class": "location",
+      "unicode": "b072",
+      "unicode_decimal": 45170
+    },
+    {
+      "icon_id": "3181349",
+      "name": "获取",
+      "font_class": "obtain",
+      "unicode": "b071",
+      "unicode_decimal": 45169
+    },
+    {
+      "icon_id": "3181258",
+      "name": "帮助02",
+      "font_class": "help",
+      "unicode": "b068",
+      "unicode_decimal": 45160
+    },
+    {
+      "icon_id": "3181695",
+      "name": "箭头06",
+      "font_class": "arrow-bottom05",
+      "unicode": "b069",
+      "unicode_decimal": 45161
+    },
+    {
+      "icon_id": "3181717",
+      "name": "箭头06",
+      "font_class": "arrow-top05",
+      "unicode": "b070",
+      "unicode_decimal": 45168
+    },
+    {
+      "icon_id": "3181467",
+      "name": "通用计算机",
+      "font_class": "computer02",
+      "unicode": "b067",
+      "unicode_decimal": 45159
+    },
+    {
+      "icon_id": "3181603",
+      "name": "桌面截图",
+      "font_class": "screenshots",
+      "unicode": "b066",
+      "unicode_decimal": 45158
+    },
+    {
+      "icon_id": "3181586",
+      "name": "暂无数据",
+      "font_class": "no-data",
+      "unicode": "b065",
+      "unicode_decimal": 45157
+    },
+    {
+      "icon_id": "3181295",
+      "name": "返回",
+      "font_class": "return",
+      "unicode": "b064",
+      "unicode_decimal": 45156
+    },
+    {
+      "icon_id": "3181575",
+      "name": "预览",
+      "font_class": "preview",
+      "unicode": "b063",
+      "unicode_decimal": 45155
+    },
+    {
+      "icon_id": "3181559",
+      "name": "异常警告",
+      "font_class": "caveat01",
+      "unicode": "b062",
+      "unicode_decimal": 45154
+    },
+    {
+      "icon_id": "3181300",
+      "name": "风险",
+      "font_class": "risk",
+      "unicode": "b060",
+      "unicode_decimal": 45152
+    },
+    {
+      "icon_id": "3181536",
+      "name": "系统管理",
+      "font_class": "system-manage",
+      "unicode": "b061",
+      "unicode_decimal": 45153
+    },
+    {
+      "icon_id": "3181255",
+      "name": "办公设备",
+      "font_class": "office1",
+      "unicode": "b052",
+      "unicode_decimal": 45138
+    },
+    {
+      "icon_id": "3181368",
+      "name": "介质",
+      "font_class": "u-disk",
+      "unicode": "b053",
+      "unicode_decimal": 45139
+    },
+    {
+      "icon_id": "3181370",
+      "name": "刻录",
+      "font_class": "burn",
+      "unicode": "b054",
+      "unicode_decimal": 45140
+    },
+    {
+      "icon_id": "268067",
+      "name": "数据库",
+      "font_class": "database",
+      "unicode": "b055",
+      "unicode_decimal": 45141
+    },
+    {
+      "icon_id": "6509523",
+      "name": "课堂截图",
+      "font_class": "screenshot",
+      "unicode": "b056",
+      "unicode_decimal": 45142
+    },
+    {
+      "icon_id": "9460380",
+      "name": "存储",
+      "font_class": "storage",
+      "unicode": "b057",
+      "unicode_decimal": 45143
+    },
+    {
+      "icon_id": "9460381",
+      "name": "U盘",
+      "font_class": "u-disk01",
+      "unicode": "b058",
+      "unicode_decimal": 45144
+    },
+    {
+      "icon_id": "9460382",
+      "name": "互联",
+      "font_class": "interconnected01",
+      "unicode": "b059",
+      "unicode_decimal": 45145
+    },
+    {
+      "icon_id": "9400653",
+      "name": "远望通",
+      "font_class": "logo",
+      "unicode": "b051",
+      "unicode_decimal": 45137
+    },
+    {
+      "icon_id": "3407677",
+      "name": "关闭",
+      "font_class": "close03",
+      "unicode": "b050",
+      "unicode_decimal": 45136
+    },
+    {
+      "icon_id": "3181642",
+      "name": "箭头03",
+      "font_class": "arrow-left02",
+      "unicode": "b049",
+      "unicode_decimal": 45129
+    },
+    {
+      "icon_id": "3181404",
+      "name": "日历",
+      "font_class": "calendar",
+      "unicode": "b048",
+      "unicode_decimal": 45128
+    },
+    {
+      "icon_id": "3181637",
+      "name": "箭头03",
+      "font_class": "arrow-right02",
+      "unicode": "b047",
+      "unicode_decimal": 45127
+    },
+    {
+      "icon_id": "3181564",
+      "name": "用户03",
+      "font_class": "user",
+      "unicode": "b036",
+      "unicode_decimal": 45110
+    },
+    {
+      "icon_id": "751501",
+      "name": "数据",
+      "font_class": "data01",
+      "unicode": "b037",
+      "unicode_decimal": 45111
+    },
+    {
+      "icon_id": "4688851",
+      "name": "流程管理-01",
+      "font_class": "process",
+      "unicode": "b038",
+      "unicode_decimal": 45112
+    },
+    {
+      "icon_id": "6137164",
+      "name": "日志",
+      "font_class": "log",
+      "unicode": "b039",
+      "unicode_decimal": 45113
+    },
+    {
+      "icon_id": "7415153",
+      "name": "EDR",
+      "font_class": "edr",
+      "unicode": "b040",
+      "unicode_decimal": 45120
+    },
+    {
+      "icon_id": "8434668",
+      "name": "退出",
+      "font_class": "exit",
+      "unicode": "b041",
+      "unicode_decimal": 45121
+    },
+    {
+      "icon_id": "8434785",
+      "name": "堡垒机",
+      "font_class": "fortress",
+      "unicode": "b042",
+      "unicode_decimal": 45122
+    },
+    {
+      "icon_id": "8434786",
+      "name": "态势感知",
+      "font_class": "situation",
+      "unicode": "b043",
+      "unicode_decimal": 45123
+    },
+    {
+      "icon_id": "8434787",
+      "name": "防火墙",
+      "font_class": "firewall",
+      "unicode": "b044",
+      "unicode_decimal": 45124
+    },
+    {
+      "icon_id": "8434788",
+      "name": "天擎",
+      "font_class": "tianqing",
+      "unicode": "b045",
+      "unicode_decimal": 45125
+    },
+    {
+      "icon_id": "8434789",
+      "name": "业务管理",
+      "font_class": "business",
+      "unicode": "b046",
+      "unicode_decimal": 45126
+    },
+    {
+      "icon_id": "8395700",
+      "name": "边界安全",
+      "font_class": "boundary",
+      "unicode": "b026",
+      "unicode_decimal": 45094
+    },
+    {
+      "icon_id": "8395701",
+      "name": "SQL",
+      "font_class": "sql",
+      "unicode": "b027",
+      "unicode_decimal": 45095
+    },
+    {
+      "icon_id": "8395702",
+      "name": "弱口令类",
+      "font_class": "password01",
+      "unicode": "b028",
+      "unicode_decimal": 45096
+    },
+    {
+      "icon_id": "8395703",
+      "name": "漏洞类",
+      "font_class": "vulnerability",
+      "unicode": "b029",
+      "unicode_decimal": 45097
+    },
+    {
+      "icon_id": "8395704",
+      "name": "文件上传",
+      "font_class": "upload",
+      "unicode": "b030",
+      "unicode_decimal": 45104
+    },
+    {
+      "icon_id": "8395705",
+      "name": "远程",
+      "font_class": "remotely",
+      "unicode": "b031",
+      "unicode_decimal": 45105
+    },
+    {
+      "icon_id": "8395706",
+      "name": "终端安全",
+      "font_class": "terminal01",
+      "unicode": "b032",
+      "unicode_decimal": 45106
+    },
+    {
+      "icon_id": "8395707",
+      "name": "其他类别篡改",
+      "font_class": "tamper",
+      "unicode": "b033",
+      "unicode_decimal": 45107
+    },
+    {
+      "icon_id": "8395708",
+      "name": "端口类",
+      "font_class": "port",
+      "unicode": "b034",
+      "unicode_decimal": 45108
+    },
+    {
+      "icon_id": "8395709",
+      "name": "黑客类篡改",
+      "font_class": "tamper01",
+      "unicode": "b035",
+      "unicode_decimal": 45109
+    },
+    {
+      "icon_id": "8395201",
+      "name": "总计",
+      "font_class": "all01",
+      "unicode": "b025",
+      "unicode_decimal": 45093
+    },
+    {
+      "icon_id": "8393656",
+      "name": "其他",
+      "font_class": "other",
+      "unicode": "b018",
+      "unicode_decimal": 45080
+    },
+    {
+      "icon_id": "8393657",
+      "name": "安全设备",
+      "font_class": "safety01",
+      "unicode": "b019",
+      "unicode_decimal": 45081
+    },
+    {
+      "icon_id": "8393658",
+      "name": "个人计算机",
+      "font_class": "computer",
+      "unicode": "b020",
+      "unicode_decimal": 45088
+    },
+    {
+      "icon_id": "8393659",
+      "name": "网络设备",
+      "font_class": "internet",
+      "unicode": "b021",
+      "unicode_decimal": 45089
+    },
+    {
+      "icon_id": "8393660",
+      "name": "服务器",
+      "font_class": "server",
+      "unicode": "b022",
+      "unicode_decimal": 45090
+    },
+    {
+      "icon_id": "8393661",
+      "name": "办公设备",
+      "font_class": "office",
+      "unicode": "b023",
+      "unicode_decimal": 45091
+    },
+    {
+      "icon_id": "8393674",
+      "name": "保障设备",
+      "font_class": "protection",
+      "unicode": "b024",
+      "unicode_decimal": 45092
+    },
+    {
+      "icon_id": "3181610",
+      "name": "箭头01",
+      "font_class": "arrow-bottom",
+      "unicode": "b017",
+      "unicode_decimal": 45079
+    },
+    {
+      "icon_id": "8353739",
+      "name": "内外网互联",
+      "font_class": "interconnected",
+      "unicode": "b016",
+      "unicode_decimal": 45078
+    },
+    {
+      "icon_id": "8353157",
+      "name": "安全",
+      "font_class": "safety",
+      "unicode": "b001",
+      "unicode_decimal": 45057
+    },
+    {
+      "icon_id": "8353159",
+      "name": "查看",
+      "font_class": "view",
+      "unicode": "b002",
+      "unicode_decimal": 45058
+    },
+    {
+      "icon_id": "8353160",
+      "name": "警告",
+      "font_class": "caveat",
+      "unicode": "b003",
+      "unicode_decimal": 45059
+    },
+    {
+      "icon_id": "8353161",
+      "name": "恶意资源消耗",
+      "font_class": "malicious",
+      "unicode": "b004",
+      "unicode_decimal": 45060
+    },
+    {
+      "icon_id": "8353162",
+      "name": "非法外链",
+      "font_class": "outreach",
+      "unicode": "b005",
+      "unicode_decimal": 45061
+    },
+    {
+      "icon_id": "8353163",
+      "name": "病毒木马",
+      "font_class": "virus",
+      "unicode": "b006",
+      "unicode_decimal": 45062
+    },
+    {
+      "icon_id": "8353165",
+      "name": "正常",
+      "font_class": "normal",
+      "unicode": "b007",
+      "unicode_decimal": 45063
+    },
+    {
+      "icon_id": "8353166",
+      "name": "外部通报",
+      "font_class": "bulletin",
+      "unicode": "b008",
+      "unicode_decimal": 45064
+    },
+    {
+      "icon_id": "8353167",
+      "name": "异常",
+      "font_class": "abnormal",
+      "unicode": "b009",
+      "unicode_decimal": 45065
+    },
+    {
+      "icon_id": "8353169",
+      "name": "全部",
+      "font_class": "all",
+      "unicode": "b010",
+      "unicode_decimal": 45072
+    },
+    {
+      "icon_id": "8353171",
+      "name": "网页篡改",
+      "font_class": "web",
+      "unicode": "b011",
+      "unicode_decimal": 45073
+    },
+    {
+      "icon_id": "8353172",
+      "name": "终端外联",
+      "font_class": "terminal",
+      "unicode": "b012",
+      "unicode_decimal": 45074
+    },
+    {
+      "icon_id": "8353338",
+      "name": "高级持续性威胁",
+      "font_class": "apt",
+      "unicode": "b013",
+      "unicode_decimal": 45075
+    },
+    {
+      "icon_id": "8353339",
+      "name": "口令安全",
+      "font_class": "password",
+      "unicode": "b014",
+      "unicode_decimal": 45076
+    },
+    {
+      "icon_id": "8353340",
+      "name": "数据篡改",
+      "font_class": "data",
+      "unicode": "b015",
+      "unicode_decimal": 45077
+    }
+  ]
+}

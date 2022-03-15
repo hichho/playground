@@ -123,6 +123,12 @@ class DemoController extends Controller {
     const testBase64 = ctx.helper.base64Encode('haha');
     ctx.body = testBase64;
   }
+
+
+  async webPage() {
+    const { ctx } = this;
+    await ctx.render('index.html');
+  }
 }
 
 module.exports = DemoController;

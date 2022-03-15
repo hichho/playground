@@ -1,0 +1,138 @@
+
+.aim-one {
+	background-image: url("./../images/operate-aim-19.png");
+	-webkit-animation: cartoonRun 4s infinite steps(150, end);
+	-moz-animation: cartoonRun 4s infinite steps(150, end);
+	-ms-animation: cartoonRun 4s infinite steps(150, end);
+	animation: cartoonRun 4s infinite steps(150, end)
+}
+
+@-webkit-keyframes cartoonRun {
+	0% {
+		background-position-y: 0px
+	}
+	100% {
+		background-position-y: -12300px
+	}
+}
+
+@-moz-keyframes cartoonRun {
+	0% {
+		background-position-y: 0px
+	}
+	100% {
+		background-position-y: -12300px
+	}
+}
+
+@-ms-keyframes cartoonRun {
+	0% {
+		background-position-y: 0px
+	}
+	100% {
+		background-position-y: -12300px
+	}
+}
+
+@keyframes cartoonRun {
+	0% {
+		background-position-y: 0px
+	}
+	100% {
+		background-position-y: -12300px
+	}
+}
+/*地图背景动画*/
+.aim-map{
+	background: transparent url("./../images/aim-map.png") no-repeat;
+	-webkit-animation: cartoonRun-1 6s infinite steps(150, end);
+	-moz-animation: cartoonRun-1 6s infinite steps(150, end);
+	-ms-animation: cartoonRun-1 6s infinite steps(150, end);
+	animation: cartoonRun-1 6s infinite steps(150, end)
+}
+
+@-webkit-keyframes cartoonRun-1 {
+	0% {
+		background-position-y: 0px
+	}
+	100% {
+		background-position-y: -77100px
+	}
+}
+
+@-moz-keyframes cartoonRun-1 {
+	0% {
+		background-position-y: 0px
+	}
+	100% {
+		background-position-y: -77100px
+	}
+}
+
+@-ms-keyframes cartoonRun-1 {
+	0% {
+		background-position-y: 0px
+	}
+	100% {
+		background-position-y: -77100px
+	}
+}
+
+@keyframes cartoonRun-1 {
+	0% {
+		background-position-y: 0px
+	}
+	100% {
+		background-position-y: -77100px
+	}
+}
+
+/*世界地图背景动画*/
+.aim-worldMap {
+	position: absolute;
+	top:0;
+	width: 631px;
+	height: 542px;
+	z-index: 0;
+	background: transparent url("./../images/aim-worldMap.png") no-repeat;
+	-webkit-animation: cartoonRun-2 3s infinite steps(150, end);
+	-moz-animation: cartoonRun-2 3s infinite steps(150, end);
+	-ms-animation: cartoonRun-2 3s infinite steps(150, end);
+	animation: cartoonRun-2 3s infinite steps(150, end)
+}
+
+@-webkit-keyframes cartoonRun-2 {
+	0% {
+		background-position-y: 0px
+	}
+	100% {
+		background-position-y: -81300px
+	}
+}
+
+@-moz-keyframes cartoonRun-2 {
+	0% {
+		background-position-y: 0px
+	}
+	100% {
+		background-position-y: -81300px
+	}
+}
+
+@-ms-keyframes cartoonRun-2 {
+	0% {
+		background-position-y: 0px
+	}
+	100% {
+		background-position-y: -81300px
+	}
+}
+
+@keyframes cartoonRun-2 {
+	0% {
+		background-position-y: 0px
+	}
+	100% {
+		background-position-y: -81300px
+	}
+}

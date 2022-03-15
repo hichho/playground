@@ -28,4 +28,7 @@ module.exports = app => {
   router.get('/updateAppleDb', controller.appleManage.updateApple);
   router.get('/deleteAppleDb', controller.appleManage.deleteApple);
 
+  router.get('/webPage', controller.demo.webPage);
+
+
 };
