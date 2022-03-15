@@ -1,5 +1,5 @@
 import {defineComponent, PropType} from "vue";
-import {Navigation, TYPE} from "@/constant";
+import {INavigationItem, Navigation, TYPE} from "@/constant";
 import less from './index.module.less';
 
 export default defineComponent({
@@ -12,9 +12,8 @@ export default defineComponent({
     },
     setup(props) {
 
-
-        const handleClick = () => {
-            console.log(123)
+        const handleClick = (item:INavigationItem) => {
+            import('@/router/routerManager').then(res => res.goList(item.key))
         }
 
         return () => (
@@ -23,7 +22,7 @@ export default defineComponent({
                     {Navigation.map(item => {
                         return (
                             <div class={less.navi_item}
-                                 onClick={handleClick}
+                                 onClick={()=>handleClick(item)}
                             >{item.name}</div>
                         )
                     })}

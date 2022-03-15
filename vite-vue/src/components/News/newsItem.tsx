@@ -51,8 +51,8 @@ export default defineComponent({
                       {data?.value?.data.map(item => {
                           return <div class={less.item} key={item.id}>
                               <Paragraph ellipsis={true}
-                                         class={less.title}>
-                                  {item.name}
+                                         class={less.title}
+                                         content={item.name}>
                               </Paragraph>
                               <span class={less.time}>
                                 {item.createTime}

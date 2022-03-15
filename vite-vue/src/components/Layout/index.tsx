@@ -3,13 +3,14 @@ import less from './index.module.less';
 import Image from '@/components/Image';
 import Navigation from "@/components/Navigation";
 import Foot from "@/components/Foot";
+import {TYPE} from "@/constant";
 
 export default defineComponent({
     name: 'Layout',
     components: {Image},
     setup() {
         const handle = () => {
-            console.log(123)
+            import('@/router/routerManager').then(res => res.goList(TYPE.HOME));
         }
         return () => (
             <div class={less.frame}>

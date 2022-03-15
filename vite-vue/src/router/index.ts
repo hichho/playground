@@ -1,13 +1,18 @@
 import {createRouter, createWebHistory, RouteRecordRaw} from 'vue-router';
 
+
+const title = "浙江特殊教育职业学院";
+
 const routes: Array<RouteRecordRaw> = [{
-    path: "/", meta: {title: '浙江特殊教育职业学院'},
+    path: "/", meta: {title},
     component: () => import("@/components/Layout"),
     children: [
         {
             path: "/", name: "首页", component: () => import("@/views")
-            , meta: {title: "首页"}
         },
+        {
+            path: "/list", name: "信息列表", component: () => import("@/views/list")
+        }
     ]
 }];
 const router = createRouter({

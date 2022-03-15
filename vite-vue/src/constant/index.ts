@@ -16,7 +16,7 @@ export enum TYPE_NAME {
     FILE = '政策文件',
 }
 
-interface INavigationItem {
+export interface INavigationItem {
     key: TYPE,
     name: TYPE_NAME
 }
