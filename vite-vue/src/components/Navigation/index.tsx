@@ -7,7 +7,6 @@ export default defineComponent({
     props: {
         type: {
             type: Number as PropType<TYPE>,
-            required: false,
         }
     },
     setup(props) {
