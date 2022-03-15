@@ -1,7 +1,10 @@
-import {defineComponent, PropType, watch} from "vue";
+import {defineComponent, PropType} from "vue";
 import {TYPE} from "@/constant";
 import {useNewsItemApi} from "@/api/homeApi";
+import {Typography, Spin} from 'ant-design-vue';
 import less from './newsItem.module.less';
+
+const {Paragraph} = Typography;
 
 export default defineComponent({
     name: 'NewsItem',
@@ -22,13 +25,42 @@ export default defineComponent({
     setup(props) {
         const {loading, data} = useNewsItemApi(props.typeValue);
 
-        watch(data, (value) => {
-            console.log(value?.data)
-        })
-
         return () => (
             <div class={less.frame}>
-                33
+                <div class={less.title}>
+                    <div class={less.left_title}>
+                        <h2>{props.title}</h2>
+                        <div class={less.line}/>
+                        <h2>{props.enTitle}</h2>
+                    </div>
+                    <div class={less.more}>
+                        更多 +
+                    </div>
+                </div>
+
+                <div class={less.row_line}/>
+
+                {
+                    loading.value && <div class={less.list}>
+                    <Spin/>
+                  </div>
+                }
+                {
+                    !loading.value &&
+                  <div class={less.list}>
+                      {data?.value?.data.map(item => {
+                          return <div class={less.item} key={item.id}>
+                              <Paragraph ellipsis={true}
+                                         class={less.title}>
+                                  {item.name}
+                              </Paragraph>
+                              <span class={less.time}>
+                                {item.createTime}
+                            </span>
+                          </div>
+                      })}
+                  </div>
+                }
             </div>
         )
     }

@@ -10,32 +10,41 @@ export default defineComponent({
     setup() {
 
         return () => (
-            <div>
-                <Row>
-                    <Col span={12} style={{padding: '16px 16px 16px 0'}}>
+            <div style={{width: 1200, display: 'flex', flexDirection: 'column'}}>
+                <Row type={'flex'} justify={'space-between'}>
+                    <Col span={12} style={{
+                         paddingRight: '24px'
+                    }}>
                         <NewsItem typeValue={TYPE.NEWS}
                                   title={'工作动态'}
                                   enTitle={'WORK DYNAMICS'}
                         />
                     </Col>
-                    <Col span={12} style={{padding: '16px 0 16px 16px'}}>
+                    <Col span={12} style={{
+                       paddingLeft: '24px'
+                    }}>
                         <NewsItem typeValue={TYPE.NOTICE}
                                   title={'通知公告'}
                                   enTitle={'WORK DYNAMICS'}
                         />
                     </Col>
                 </Row>
-                <Row>
-                    <Col span={12} style={{padding: '16px 16px 16px 0'}}>
+
+                <Row type={'flex'} justify={'space-between'}>
+                    <Col span={12} style={{
+                         paddingRight: '24px'
+                    }}>
                         <NewsItem typeValue={TYPE.MEETING}
                                   title={'会议资料'}
-                                  enTitle={'WORK DYNAMICS'}
+                                  enTitle={'CONFERENCE MATERIALS'}
                         />
                     </Col>
-                    <Col span={12} style={{padding: '16px 0 16px 16px'}}>
-                        <NewsItem typeValue={TYPE.FILE}
-                                  title={'政策文件'}
-                                  enTitle={'WORK DYNAMICS'}
+                    <Col span={12} style={{
+                       paddingLeft: '12px'
+                    }}>
+                        <NewsItem typeValue={TYPE.NOTICE}
+                                  title={'通知公告'}
+                                  enTitle={'POLICY DOCUMENT'}
                         />
                     </Col>
                 </Row>
