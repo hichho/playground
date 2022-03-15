@@ -1,6 +1,7 @@
-import {defineComponent, PropType} from "vue";
+import {defineComponent, PropType, watch} from "vue";
 import {TYPE} from "@/constant";
 import {useNewsItemApi} from "@/api/homeApi";
+import less from './newsItem.module.less';
 
 export default defineComponent({
     name: 'NewsItem',
@@ -19,12 +20,15 @@ export default defineComponent({
         }
     },
     setup(props) {
-        console.log(123)
         const {loading, data} = useNewsItemApi(props.typeValue);
 
-        return () => (
-            <div>
+        watch(data, (value) => {
+            console.log(value?.data)
+        })
 
+        return () => (
+            <div class={less.frame}>
+                33
             </div>
         )
     }
