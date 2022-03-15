@@ -1,4 +1,6 @@
-import {defineComponent, PropType} from "vue";
+import {computed, defineComponent, PropType} from "vue";
+import less from './index.module.less';
+import {INavigationItem, Navigation} from "@/constant";
 
 export default defineComponent({
     name: 'ContentContainer',
@@ -9,8 +11,19 @@ export default defineComponent({
         }
     },
     setup(props, {slots}) {
+        const getSelectClass = computed((item: INavigationItem) => item.key === 1 ? 'less.selected' : 'less.no_select')
         return () => (
-            <div>
+            <div class={less.frame}>
+
+                <div>
+                    {Navigation.map(item => {
+                        if (item.key > 0) {
+                            return (<div class={getSelectClass(item).value}>
+                                {item.name}
+                            </div>)
+                        }
+                    })}
+                </div>
 
                 {/*{slots.listContent?.()}*/}
                 {/*{slots.detailContent?.()}*/}
