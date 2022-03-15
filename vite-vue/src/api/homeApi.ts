@@ -12,6 +12,10 @@ interface INewsItem {
     createTime: string
 }
 
+interface IFoot {
+    data: string;
+}
+
 const useBannerApi = () => {
     return useApi<IResult<IBannerResult[]>>('/app/banner/list');
 }
@@ -36,7 +40,10 @@ const useNewsItemApi = (type: TYPE.NEWS | TYPE.NOTICE | TYPE.MEETING | TYPE.FILE
     }
     return useApi<IResult<INewsItem[]>>({url: '/app/info/list?type=' + typeValue + '&start=0&pageNo=1&length=5'});
 }
+const useFootApi = () => {
+    return useApi<IResult<IFoot>>('/app/index_bottom_txt');
+}
 
 export {
-    useBannerApi, useNewsItemApi
+    useBannerApi, useNewsItemApi, useFootApi
 }

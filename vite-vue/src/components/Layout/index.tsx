@@ -2,6 +2,7 @@ import {defineComponent} from "vue";
 import less from './index.module.less';
 import Image from '@/components/Image';
 import Navigation from "@/components/Navigation";
+import Foot from "@/components/Foot";
 
 export default defineComponent({
     name: 'Layout',
@@ -23,6 +24,7 @@ export default defineComponent({
                 </div>
                 <Navigation/>
                 <router-view/>
+                <Foot/>
             </div>
         )
     }
