@@ -1,24 +1,36 @@
-const path = require('path')
-const webpack = require('webpack')
-const GitRevisionPlugin = require('git-revision-webpack-plugin')
-const GitRevision = new GitRevisionPlugin()
-const buildDate = JSON.stringify(new Date().toLocaleString())
-const createThemeColorReplacerPlugin = require('./config/plugin.config')
+const path = require('path');
+const webpack = require('webpack');
+const GitRevisionPlugin = require('git-revision-webpack-plugin');
+const GitRevision = new GitRevisionPlugin();
+const buildDate = JSON.stringify(new Date().toLocaleString());
+const createThemeColorReplacerPlugin = require('./config/plugin.config');
 
-function resolve (dir) {
-  return path.join(__dirname, dir)
+const proxyApis = [ '/app' ];
+
+let proxy = {};
+proxyApis.forEach(item => {
+  proxy[item] = {
+    target: 'http://zcse-index.tmp.kepai365.ltd/',
+    ws: true, changeOrigin: true, pathRewrite: { '^/': '' }
+  };
+});
+
+
+
+function resolve(dir) {
+  return path.join(__dirname, dir);
 }
 
 // check Git
-function getGitHash () {
+function getGitHash() {
   try {
-    return GitRevision.version()
+    return GitRevision.version();
   } catch (e) {
   }
-  return 'unknown'
+  return 'unknown';
 }
 
-const isProd = process.env.NODE_ENV === 'production'
+const isProd = process.env.NODE_ENV === 'production';
 
 const assetsCDN = {
   // webpack build externals
@@ -36,7 +48,7 @@ const assetsCDN = {
     '//cdn.jsdelivr.net/npm/vuex@3.1.1/dist/vuex.min.js',
     '//cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js'
   ]
-}
+};
 
 // vue.config.js
 const vueConfig = {
@@ -56,10 +68,10 @@ const vueConfig = {
   },
 
   chainWebpack: config => {
-    config.resolve.alias.set('@$', resolve('src'))
+    config.resolve.alias.set('@$', resolve('src'));
 
-    const svgRule = config.module.rule('svg')
-    svgRule.uses.clear()
+    const svgRule = config.module.rule('svg');
+    svgRule.uses.clear();
     svgRule
       .oneOf('inline')
       .resourceQuery(/inline/)
@@ -74,16 +86,16 @@ const vueConfig = {
         name: 'assets/[name].[hash:8].[ext]',
         // todo:偏方 https://github.com/vueComponent/ant-design-vue-pro/pull/1285/files
         esModule: false
-      })
+      });
 
     // if prod is on
     // assets require on cdn
     if (isProd) {
       config.plugin('html')
         .tap(args => {
-          args[0].cdn = assetsCDN
-          return args
-        })
+          args[0].cdn = assetsCDN;
+          return args;
+        });
     }
   },
 
@@ -104,16 +116,9 @@ const vueConfig = {
   },
 
   devServer: {
-    // development server port 8000
-    port: 8000
-    // If you want to turn on the proxy, please remove the mockjs /src/main.jsL11
-    // proxy: {
-    //   '/api': {
-    //     target: 'https://mock.ihx.me/mock/5baf3052f7da7e07e04a5116/antd-pro',
-    //     ws: false,
-    //     changeOrigin: true
-    //   }
-    // }
+    disableHostCheck: true,
+    open: true,
+    proxy: proxy
   },
 
   // disable source map in production
@@ -121,12 +126,12 @@ const vueConfig = {
   lintOnSave: undefined,
   // babel-loader no-ignore node_modules/*
   transpileDependencies: []
-}
+};
 
 // preview.pro.loacg.com only do not use in your production;
 if (process.env.VUE_APP_PREVIEW === 'true') {
   // add `ThemeColorReplacer` plugin to webpack plugins
-  vueConfig.configureWebpack.plugins.push(createThemeColorReplacerPlugin())
+  vueConfig.configureWebpack.plugins.push(createThemeColorReplacerPlugin());
 }
 
-module.exports = vueConfig
+module.exports = vueConfig;

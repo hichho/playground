@@ -21,7 +21,7 @@ export default {
 
   'layouts.usermenu.dialog.title': '信息',
   'layouts.usermenu.dialog.content': '您确定要注销吗？',
-  'layouts.userLayout.title': '远望信息 是滨江区最具影响力的 信息安全公司',
+  'layouts.userLayout.title': '远望信息 是全国最具影响力的 信息安全公司',
   ...components,
   ...global,
   ...menu,
