@@ -1,13 +1,14 @@
 {
-  "name": "data-display-platform",
+  "name": "vue",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "vue-cli-service serve",
+    "dev": "vue-cli-service serve",
     "build": "vue-cli-service build"
   },
   "dependencies": {
     "@jiaminghi/data-view": "^2.10.0",
+    "ant-design-vue": "^1.7.8",
     "axios": "^0.26.0",
     "core-js": "^3.6.5",
     "element-ui": "^2.15.6",

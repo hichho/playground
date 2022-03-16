@@ -4,7 +4,7 @@
   </div>
 </template>
 <script>
-import Num from '@/views/Num';
+import Num from '@/views/num';
 
 export default {
   name: 'SelfIncreasingNum',

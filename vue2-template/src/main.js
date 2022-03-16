@@ -5,9 +5,14 @@ import dataV from '@jiaminghi/data-view';
 import ElementUI, { Notification } from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import scroll from 'vue-seamless-scroll';
+import Antd from 'ant-design-vue';
+import 'ant-design-vue/dist/antd.css'
+
+
 
 
 Vue.config.productionTip = false;
+Vue.use(Antd);
 Vue.use(dataV);
 Vue.use(ElementUI);
 Vue.use(scroll);
