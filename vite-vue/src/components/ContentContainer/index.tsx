@@ -1,7 +1,7 @@
-import {computed, defineComponent, PropType} from "vue";
+import {defineComponent, PropType} from "vue";
 import less from './index.module.less';
 import {useRoute} from 'vue-router';
-import {INavigationItem, Navigation, TYPE} from "@/constant";
+import {INavigationItem, Navigation} from "@/constant";
 
 export default defineComponent({
     name: 'ContentContainer',
@@ -12,10 +12,15 @@ export default defineComponent({
         }
     },
     setup(props, {slots}) {
-        const getSelectClass = (item: INavigationItem) => Number(useRoute().query.type) === item.key ?
-            less.selected : less.no_select;
-
-
+        const getSelectClass = (item: INavigationItem) => {
+            if (useRoute().query?.keyword) {
+                return less.no_select;
+            } else {
+                return Number(useRoute().query.type) === item.key ?
+                    less.selected : less.no_select;
+            }
+        }
+        
         return () => (
             <div class={less.frame}>
                 <div class={less.menu}>
