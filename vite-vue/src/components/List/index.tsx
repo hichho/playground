@@ -1,7 +1,7 @@
-import {defineComponent, onMounted, ref} from "vue";
+import {defineComponent, onMounted, ref, watch} from "vue";
 import {Pagination, Spin} from "ant-design-vue";
 import {useNewsItemApi} from "@/api/homeApi";
-import {useRoute} from "vue-router";
+import {onBeforeRouteUpdate, useRoute} from "vue-router";
 import 'ant-design-vue/es/pagination/style/css';
 import less from './index.module.less';
 import 'ant-design-vue/es/spin/style/index.css';
@@ -9,13 +9,24 @@ import 'ant-design-vue/es/spin/style/index.css';
 export default defineComponent({
     name: 'List',
     setup() {
+        const query = useRoute().query;
         const current = ref(1);
-
+        const keyword = ref(query.keyword);
+        const type = ref(query.type);
         const {
             data,
             loading, run
-        } = useNewsItemApi(Number(useRoute().query.type), useRoute().query?.keyword as string, true);
-        onMounted(() => run(current.value));
+        } = useNewsItemApi(2, true);
+
+        onMounted(() => run(current.value, keyword.value, type.value));
+
+        onBeforeRouteUpdate(info => {
+            current.value = 1;
+            keyword.value = info.query.keyword;
+            type.value = info.query.type;
+            run(current.value, keyword.value, type.value);
+        })
+
 
         return () => (
             <div class={less.frame}>
@@ -38,12 +49,13 @@ export default defineComponent({
                     }
                 </div>
                 <Pagination
+                    class={less.pagination}
                     current={current.value}
                     pageSize={5}
                     total={Number(data?.value?.recordsTotal ?? 0)}
                     onChange={(page) => {
                         current.value = page;
-                        run(page);
+                        run(current.value, keyword.value, type.value);
                     }}
                 />
             </div>

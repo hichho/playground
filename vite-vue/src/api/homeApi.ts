@@ -21,7 +21,7 @@ const useBannerApi = () => {
 }
 
 const useNewsItemApi = (type: TYPE.NEWS | TYPE.NOTICE | TYPE.MEETING | TYPE.FILE
-    , keyword?: undefined | string, manual: boolean = false
+    , manual: boolean = false
 ) => {
     let typeValue: 2 | 3 | 4 | 5 = 2;
     switch (type) {
@@ -41,9 +41,9 @@ const useNewsItemApi = (type: TYPE.NEWS | TYPE.NOTICE | TYPE.MEETING | TYPE.FILE
             break;
     }
     //todo:perf
-    const setApi = (value: any) => {
+    const setApi = (current: number, keyword: string | undefined, type: TYPE.NEWS | TYPE.NOTICE | TYPE.MEETING | TYPE.FILE) => {
         return {
-            url: '/app/info/list?type=' + typeValue + '&start=0&pageNo=' + String(value) + '&length=5'
+            url: '/app/info/list?type=' + type + '&start=0&pageNo=' + String(current) + '&length=5'
                 + '&keyword+' + keyword ?? ''
         }
     }
