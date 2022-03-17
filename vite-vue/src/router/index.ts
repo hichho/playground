@@ -12,6 +12,9 @@ const routes: Array<RouteRecordRaw> = [{
         },
         {
             path: "/list", name: "信息列表", component: () => import("@/views/list")
+        },
+        {
+            path: '/detail', name: "详情", component: () => import("@/views/detail")
         }
     ]
 }];

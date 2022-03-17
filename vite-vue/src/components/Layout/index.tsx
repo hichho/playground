@@ -1,4 +1,4 @@
-import {defineComponent} from "vue";
+import {defineComponent, onMounted} from "vue";
 import less from './index.module.less';
 import Image from '@/components/Image';
 import Navigation from "@/components/Navigation";
@@ -9,8 +9,9 @@ export default defineComponent({
     name: 'Layout',
     components: {Image},
     setup() {
+
         const handle = () => {
-            import('@/router/routerManager').then(res => res.goList(TYPE.HOME));
+            import('@/router/routerManager').then(res => res.toList(TYPE.HOME));
         }
         return () => (
             <div class={less.frame}>

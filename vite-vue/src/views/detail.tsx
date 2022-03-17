@@ -1,16 +1,16 @@
 import {defineComponent} from "vue";
 import ContentContainer from "@/components/ContentContainer";
-import List from "@/components/List";
+import Detail from "@/components/Detail";
 
 export default defineComponent({
-    name: 'List',
+    name: 'DetailPage',
     setup() {
         const slots = {
-            listContent: () => <List/>
+            detailContent: () => <Detail/>
         }
         return () => (
-            <ContentContainer type={'list'}
-                              v-slots={slots}>
+            <ContentContainer v-slots={slots}
+                              type={'detail'}>
             </ContentContainer>
         )
     }

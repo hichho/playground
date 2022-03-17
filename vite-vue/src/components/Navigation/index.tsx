@@ -12,7 +12,7 @@ export default defineComponent({
     setup(props) {
 
         const handleClick = (item:INavigationItem) => {
-            import('@/router/routerManager').then(res => res.goList(item.key))
+            import('@/router/routerManager').then(res => res.toList(item.key))
         }
 
         return () => (

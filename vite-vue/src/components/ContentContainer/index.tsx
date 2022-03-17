@@ -27,7 +27,7 @@ export default defineComponent({
                     {Navigation.map(item => {
                         if (item.key > 0) {
                             return (<div key={item.key} class={getSelectClass(item)}
-                                         onClick={() => import('@/router/routerManager').then(res => res.goList(item.key))}
+                                         onClick={() => import('@/router/routerManager').then(res => res.toList(item.key))}
                             >
                                 {item.name}
                             </div>)

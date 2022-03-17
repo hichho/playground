@@ -1,4 +1,4 @@
-import {defineComponent, PropType} from "vue";
+import {defineComponent, onMounted, PropType} from "vue";
 import {TYPE} from "@/constant";
 import {useNewsItemApi} from "@/api/homeApi";
 import {Typography, Spin} from 'ant-design-vue';
@@ -23,7 +23,9 @@ export default defineComponent({
         }
     },
     setup(props) {
-        const {loading, data} = useNewsItemApi(props.typeValue);
+        const {loading, data, run} = useNewsItemApi(props.typeValue, true);
+
+        onMounted(() => run(0, '', props.typeValue))
 
         return () => (
             <div class={less.frame}>
@@ -45,11 +47,14 @@ export default defineComponent({
                     <Spin/>
                   </div>
                 }
+
+
                 {
                     !loading.value &&
                   <div class={less.list}>
-                      {data?.value?.data.map(item => {
-                          return <div class={less.item} key={item.id}>
+                      {data?.value?.data?.map(item => {
+                          return <div class={less.item} key={item.id}
+                                      onClick={() => import('@/router/routerManager').then(res => res.toDetail(props.typeValue, item.id))}>
                               <Paragraph ellipsis={true}
                                          class={less.title}
                                          content={item.name}>

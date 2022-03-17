@@ -5,6 +5,7 @@ import {onBeforeRouteUpdate, useRoute} from "vue-router";
 import 'ant-design-vue/es/pagination/style/css';
 import less from './index.module.less';
 import 'ant-design-vue/es/spin/style/index.css';
+import {TYPE} from "@/constant";
 
 export default defineComponent({
     name: 'List',
@@ -38,7 +39,9 @@ export default defineComponent({
                           {
                               data.value?.data?.map(item => {
                                   return (
-                                      <div class={less.item} key={item.id}>
+                                      <div class={less.item} key={item.id}
+                                           onClick={() => import('@/router/routerManager').then(res => res.toDetail(Number(type.value) as TYPE, item.id))}
+                                      >
                                           <div>{item.name}</div>
                                           <div>{item.createTime}</div>
                                       </div>

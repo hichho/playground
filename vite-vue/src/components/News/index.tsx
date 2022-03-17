@@ -13,7 +13,7 @@ export default defineComponent({
             <div style={{width: 1200, display: 'flex', flexDirection: 'column'}}>
                 <Row type={'flex'} justify={'space-between'}>
                     <Col span={12} style={{
-                         paddingRight: '24px'
+                        paddingRight: '24px'
                     }}>
                         <NewsItem typeValue={TYPE.NEWS}
                                   title={'工作动态'}
@@ -21,7 +21,7 @@ export default defineComponent({
                         />
                     </Col>
                     <Col span={12} style={{
-                       paddingLeft: '24px'
+                        paddingLeft: '24px'
                     }}>
                         <NewsItem typeValue={TYPE.NOTICE}
                                   title={'通知公告'}
@@ -32,7 +32,7 @@ export default defineComponent({
 
                 <Row type={'flex'} justify={'space-between'}>
                     <Col span={12} style={{
-                         paddingRight: '24px'
+                        paddingRight: '24px'
                     }}>
                         <NewsItem typeValue={TYPE.MEETING}
                                   title={'会议资料'}
@@ -40,10 +40,10 @@ export default defineComponent({
                         />
                     </Col>
                     <Col span={12} style={{
-                       paddingLeft: '12px'
+                        paddingLeft: '12px'
                     }}>
-                        <NewsItem typeValue={TYPE.NOTICE}
-                                  title={'通知公告'}
+                        <NewsItem typeValue={TYPE.FILE}
+                                  title={'政策文件'}
                                   enTitle={'POLICY DOCUMENT'}
                         />
                     </Col>
