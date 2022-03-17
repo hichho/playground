@@ -6,7 +6,7 @@ interface IBannerResult {
     pic: string | undefined
 }
 
-interface INewsItem {
+export interface INewsItem {
     id: number,
     name: string,
     createTime: string
@@ -20,7 +20,9 @@ const useBannerApi = () => {
     return useApi<IResult<IBannerResult[]>>('/app/banner/list');
 }
 
-const useNewsItemApi = (type: TYPE.NEWS | TYPE.NOTICE | TYPE.MEETING | TYPE.FILE) => {
+const useNewsItemApi = (type: TYPE.NEWS | TYPE.NOTICE | TYPE.MEETING | TYPE.FILE
+    , keyword?: undefined | string, manual: boolean = false
+) => {
     let typeValue: 2 | 3 | 4 | 5 = 2;
     switch (type) {
         case TYPE.NEWS:
@@ -38,7 +40,15 @@ const useNewsItemApi = (type: TYPE.NEWS | TYPE.NOTICE | TYPE.MEETING | TYPE.FILE
         default:
             break;
     }
-    return useApi<IResult<INewsItem[]>>({url: '/app/info/list?type=' + typeValue + '&start=0&pageNo=1&length=5'});
+    //todo:perf
+    const setApi = (value: any) => {
+        return {
+            url: '/app/info/list?type=' + typeValue + '&start=0&pageNo=' + String(value) + '&length=5'
+                + '&keyword+' + keyword ?? ''
+        }
+    }
+
+    return useApi<IResult<INewsItem[]>>(setApi, {manual});
 }
 const useFootApi = () => {
     return useApi<IResult<IFoot>>('/app/index_bottom_txt');

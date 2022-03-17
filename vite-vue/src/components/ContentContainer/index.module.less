@@ -3,7 +3,7 @@
 .frame {
   width: 1200px;
   background: rgba(12, 120, 120, 0.2);
-  min-height: calc(100vh - 174px);
+  min-height: calc(100vh - 166px);
   display: flex;
   justify-content: space-between;
   flex-direction: row;
@@ -12,6 +12,7 @@
     width: 200px;
     background: rgba(12, 12, 12, 0.4);
     padding-top: 32px;
+    font-size: 14px;
 
     .selected {
       width: 164px;
@@ -29,18 +30,20 @@
     :last-child {
       border-bottom: 1px solid @color;
     }
+
+    .no_select {
+      cursor: pointer;
+      width: 164px;
+      background: white;
+      color: @color;
+      height: 42px;
+      border: 1px solid @color;
+      border-bottom: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 
-  .no_select {
-    cursor: pointer;
-    width: 164px;
-    background: white;
-    color: @color;
-    height: 42px;
-    border: 1px solid @color;
-    border-bottom: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+
 }

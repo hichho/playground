@@ -23,9 +23,8 @@ export default defineComponent({
                   <div class={less.frame}>
                     <Carousel class={less.container}>
                         {data?.value?.data.map(item => {
-                            console.log(item.pic)
                             return (
-                                <div class={less.item}>
+                                <div class={less.item} key={item.id}>
                                     <Image class={less.img}
                                            src={item.pic}
                                     />

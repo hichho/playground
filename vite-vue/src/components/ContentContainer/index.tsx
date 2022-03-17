@@ -20,13 +20,13 @@ export default defineComponent({
                     less.selected : less.no_select;
             }
         }
-        
+
         return () => (
             <div class={less.frame}>
                 <div class={less.menu}>
                     {Navigation.map(item => {
                         if (item.key > 0) {
-                            return (<div class={getSelectClass(item)}
+                            return (<div key={item.key} class={getSelectClass(item)}
                                          onClick={() => import('@/router/routerManager').then(res => res.goList(item.key))}
                             >
                                 {item.name}
@@ -35,8 +35,8 @@ export default defineComponent({
                     })}
                 </div>
 
-                {/*{slots.listContent?.()}*/}
-                {/*{slots.detailContent?.()}*/}
+                {slots.listContent?.()}
+                {slots.detailContent?.()}
             </div>
         )
     }

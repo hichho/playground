@@ -20,7 +20,7 @@ export default defineComponent({
                 <div class={less.container}>
                     {Navigation.map(item => {
                         return (
-                            <div class={less.navi_item}
+                            <div class={less.navi_item} key={item.key}
                                  onClick={()=>handleClick(item)}
                             >{item.name}</div>
                         )

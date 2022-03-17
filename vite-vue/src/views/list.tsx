@@ -1,18 +1,17 @@
 import {defineComponent} from "vue";
 import ContentContainer from "@/components/ContentContainer";
+import List from "@/components/List";
 
 export default defineComponent({
     name: 'List',
     setup() {
         const slots = {
-            listContent: () => <div>
-                list
-            </div>,
+            listContent: () => <List/>,
         }
         return () => (
-                <ContentContainer type={'list'}
-                                  v-slots={slots}>
-                </ContentContainer>
+            <ContentContainer type={'list'}
+                              v-slots={slots}>
+            </ContentContainer>
         )
     }
 });

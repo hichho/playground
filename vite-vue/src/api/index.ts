@@ -6,7 +6,8 @@ import {HTTP_CODE} from "@/constant";
 
 export interface IResult<T> {
     code: HTTP_CODE,
-    data: T
+    data: T,
+    recordsTotal?: number
 }
 
 
