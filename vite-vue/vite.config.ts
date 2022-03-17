@@ -24,5 +24,5 @@ export default defineConfig({
             "/upload": "http://zcse-index.tmp.kepai365.ltd/"
         }
     },
-    base:'./'
+    base:'./',
 })
