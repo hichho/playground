@@ -1,15 +1,46 @@
+@import "../../styles/global.less";
+
 .frame {
   width: 1200px;
   background: rgba(12, 120, 120, 0.2);
   min-height: calc(100vh - 174px);
   display: flex;
   justify-content: space-between;
+  flex-direction: row;
 
-  .selected {
-    color: red;
+  .menu {
+    width: 200px;
+    background: rgba(12, 12, 12, 0.4);
+    padding-top: 32px;
+
+    .selected {
+      width: 164px;
+      background: @color;
+      color: white;
+      height: 42px;
+      border: 1px solid @color;
+      border-bottom: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    :last-child {
+      border-bottom: 1px solid @color;
+    }
   }
 
   .no_select {
-    color: gold;
+    cursor: pointer;
+    width: 164px;
+    background: white;
+    color: @color;
+    height: 42px;
+    border: 1px solid @color;
+    border-bottom: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
