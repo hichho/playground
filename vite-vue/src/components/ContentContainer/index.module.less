@@ -2,7 +2,6 @@
 
 .frame {
   width: 1200px;
-  background: rgba(12, 120, 120, 0.2);
   min-height: calc(100vh - 166px);
   display: flex;
   justify-content: space-between;
@@ -10,7 +9,6 @@
 
   .menu {
     width: 200px;
-    background: rgba(12, 12, 12, 0.4);
     padding-top: 32px;
     font-size: 14px;
 
@@ -26,11 +24,6 @@
       align-items: center;
       cursor: pointer;
     }
-
-    :last-child {
-      border-bottom: 1px solid @color;
-    }
-
     .no_select {
       cursor: pointer;
       width: 164px;
@@ -42,6 +35,9 @@
       display: flex;
       justify-content: center;
       align-items: center;
+    }
+    :last-child {
+      border-bottom: 1px solid @color;
     }
   }
 
