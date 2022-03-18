@@ -1,4 +1,4 @@
-import {createRouter, createWebHistory, RouteRecordRaw} from 'vue-router';
+import {createRouter, createWebHashHistory, RouteRecordRaw} from 'vue-router';
 
 
 const title = "浙江特殊教育职业学院";
@@ -19,8 +19,7 @@ const routes: Array<RouteRecordRaw> = [{
     ]
 }];
 const router = createRouter({
-    // history: createWebHistory('/test/'),
-    history: createWebHistory(),
-    routes
+    history: createWebHashHistory(),
+    routes,
 })
 export default router;

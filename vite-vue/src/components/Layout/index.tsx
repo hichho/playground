@@ -16,12 +16,12 @@ export default defineComponent({
         return () => (
             <div class={less.frame}>
                 <div class={less.container}>
-                    <Image src="/image/logo.png" className={less.logo}
+                    <Image src="./image/logo.png" className={less.logo}
                            onImageClick={handle}>
                     </Image>
                     <div class={less.search}>
                         <input placeholder="请输入关键字"/>
-                        <img src="/image/search.png" class={less.icon} alt=""/>
+                        <img src="./image/search.png" class={less.icon} alt=""/>
                     </div>
                 </div>
                 <Navigation/>
