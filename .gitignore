@@ -14,4 +14,5 @@
 .vscode/settings.json
 /ant-vue/node_modules/
 /vite-vue/dist
-/nest/test/
+/design-patterns-game/node_modules
+/design-patterns-game/src/.umi

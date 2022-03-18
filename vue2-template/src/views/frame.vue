@@ -38,6 +38,8 @@
 
 <script>
 
+import http from '@/api/axios';
+
 export default {
   data() {
     return {
@@ -50,6 +52,12 @@ export default {
   },
   mounted() {
     window.addEventListener('message', this.handleClick);
+
+    http({ url: '/app/banner/list', method: 'get', data: { id: '123' } })
+        .then(res => {
+          console.log(res);
+        });
+
   },
   methods: {
     // 父页面处发向子页面传参
@@ -84,7 +92,7 @@ export default {
   background: rgba(0, 0, 200, 0.6);
   display: flex;
   flex-direction: row;
-  color:white;
+  color: white;
 
   .left {
     display: flex;

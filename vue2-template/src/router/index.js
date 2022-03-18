@@ -13,24 +13,24 @@ const routes = [
   {
     path: '/',
     name: 'num',
-    component: () => import('../views/num')
+    component: () => import('@/views/num')
   },
   {
     path: '/todolist',
     name: 'todolist',
-    component: () => import('../views/todoList'),
+    component: () => import('@/views/todoList'),
     meta: { title: 'todoList' }
   },
   {
     path: '/frame',
     name: 'frame',
-    component: () => import('../views/frame'),
+    component: () => import('@/views/frame'),
     meta: { title: 'frame' }
   },
   {
     path: '/childFrame',
     name: 'childFrame',
-    component: () => import('../views/childFrame')
+    component: () => import('@/views/childFrame')
   }
 ];
 
