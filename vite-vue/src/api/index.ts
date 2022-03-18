@@ -14,7 +14,7 @@ export interface IResult<T> {
 function useApi<R, P extends unknown[] = any>(service: IService<R, P>, options?: BaseOptions<R, P>): RequestResult<R, P> {
     return useRequest(service, {
         ...options, onError: (error, params) => {
-            alert(JSON.stringify(error));
+            // alert(JSON.stringify(error));
             console.log(error, params);
         }
     })
