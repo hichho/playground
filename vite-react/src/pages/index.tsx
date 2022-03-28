@@ -1,12 +1,16 @@
 import React from 'react';
-import {Router, Route} from "react-router";
 import less from '@/style/index.module.less';
+import Avatar from "@/components/Avatar";
 
-const IndexPage = (props: any) => {
+const IndexPage = () => {
     return (
         <div className={less.frame}>
-            <h1
-                onClick={() => props.history.push('/home')}>index</h1>
+            <div className={less.head}>
+                <h1>浏览</h1>
+                <Avatar src={'./img/dog.jpeg'} className={less.avatar}/>
+            </div>
+
+            <input className={less.search}/>
         </div>
     )
 }

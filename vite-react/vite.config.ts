@@ -10,7 +10,7 @@ export default defineConfig({
         preprocessorOptions: {
             less: {
                 //配置全局less
-                additionalData: `@import "${resolve(__dirname, 'src/theme.module.less')}";`,
+                additionalData: `@import "${resolve(__dirname, 'src/style/theme.module.less')}";`,
             }
         }
     },
