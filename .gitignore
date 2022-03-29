@@ -16,5 +16,5 @@
 /vite-vue/dist
 /design-patterns-game/node_modules
 /design-patterns-game/src/.umi
-/nest/test/
-/nest/node_modules/
+/nest/test
+/nest/node_modules
