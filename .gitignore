@@ -19,3 +19,5 @@
 /nest-project/test
 /nest-project/node_modules
 /nest-project/dist
+/vue2-template/dist
+/vue2-template/node_modules

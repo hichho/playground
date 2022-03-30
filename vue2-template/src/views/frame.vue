@@ -33,23 +33,23 @@
 </template>
 
 <script>
-import http from "@/api/axios"
+import http from '@/api/axios'
 
 export default {
-  name: "FrameComponent",
+  name: 'FrameComponent',
   data() {
     return {
       visible: false,
       data: {
-        name: "省卫健委",
-        content: "省卫健委数据"
+        name: '省卫健委',
+        content: '省卫健委数据'
       }
     }
   },
   mounted() {
-    window.addEventListener("message", this.handleClick)
+    window.addEventListener('message', this.handleClick)
 
-    http({ url: "/app/banner/list", method: "get", data: { id: "123" } }).then(
+    http({ url: '/app/banner/list', method: 'get', data: { id: '123' } }).then(
       () => {
         // console.log(res);
       }
@@ -61,9 +61,9 @@ export default {
       const data = {
         type: 2,
         code: 200,
-        data: "父页面面传输数据过来了"
+        data: '父页面面传输数据过来了'
       }
-      this.$refs.fIframe.contentWindow.postMessage(data, "*")
+      this.$refs.fIframe.contentWindow.postMessage(data, '*')
     },
     handleClick(e) {
       if (e.data.data) {
@@ -73,8 +73,8 @@ export default {
     },
     fatherClick() {
       this.data = {
-        name: "省卫健委",
-        content: "省卫健委数据"
+        name: '省卫健委',
+        content: '省卫健委数据'
       }
       this.visible = true
     }
