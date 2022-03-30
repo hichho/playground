@@ -1,12 +1,12 @@
 <template>
   <div class="f-container">
-
-    <a-modal title="父级弹窗"
-             :visible="visible"
-             @ok="visible=false"
-             @cancel="visible=false"
-             cancelText="关闭"
-             okText="好"
+    <a-modal
+      title="父级弹窗"
+      :visible="visible"
+      @ok="visible = false"
+      @cancel="visible = false"
+      cancelText="关闭"
+      okText="好"
     >
       <div>
         <h1>{{ data.name }}</h1>
@@ -15,19 +15,17 @@
     </a-modal>
 
     <div class="left">
-      <div class="left-top" @click="fatherClick">
-        left-top
-      </div>
-      <div class="left-bottom">
-        left-bottom
-      </div>
+      <div class="left-top" @click="fatherClick">left-top</div>
+      <div class="left-bottom">left-bottom</div>
     </div>
 
     <div class="right">
-      <iframe ref="fIframe" class="right-top" src="http://172.16.11.34:8081/#/childFrame"></iframe>
-      <div class="right-bottom">
-        right-bottom
-      </div>
+      <iframe
+        ref="fIframe"
+        class="right-top"
+        src="http://172.16.11.34:8081/#/childFrame"
+      ></iframe>
+      <div class="right-bottom">right-bottom</div>
     </div>
 
     <!--    <div class="btn" @click="fClick">父页面传参</div>-->
@@ -35,27 +33,27 @@
 </template>
 
 <script>
-
-import http from '@/api/axios';
+import http from "@/api/axios"
 
 export default {
-  name: 'FrameComponent',
+  name: "FrameComponent",
   data() {
     return {
       visible: false,
       data: {
-        name: '省卫健委',
-        content: '省卫健委数据',
-      },
-    };
+        name: "省卫健委",
+        content: "省卫健委数据"
+      }
+    }
   },
   mounted() {
-    window.addEventListener('message', this.handleClick);
+    window.addEventListener("message", this.handleClick)
 
-    http({ url: '/app/banner/list', method: 'get', data: { id: '123' } })
-      .then(() => {
+    http({ url: "/app/banner/list", method: "get", data: { id: "123" } }).then(
+      () => {
         // console.log(res);
-      });
+      }
+    )
   },
   methods: {
     // 父页面处发向子页面传参
@@ -63,25 +61,25 @@ export default {
       const data = {
         type: 2,
         code: 200,
-        data: '父页面面传输数据过来了',
-      };
-      this.$refs.fIframe.contentWindow.postMessage(data, '*');
+        data: "父页面面传输数据过来了"
+      }
+      this.$refs.fIframe.contentWindow.postMessage(data, "*")
     },
     handleClick(e) {
       if (e.data.data) {
-        this.data = e.data.data;
-        this.visible = true;
+        this.data = e.data.data
+        this.visible = true
       }
     },
     fatherClick() {
       this.data = {
-        name: '省卫健委',
-        content: '省卫健委数据',
-      };
-      this.visible = true;
-    },
-  },
-};
+        name: "省卫健委",
+        content: "省卫健委数据"
+      }
+      this.visible = true
+    }
+  }
+}
 </script>
 <style scoped lang="less">
 .f-container {
