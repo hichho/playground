@@ -8,5 +8,5 @@ const goVisual = () => {
 };
 
 export default {
-  goVisual
+  goVisual,
 };

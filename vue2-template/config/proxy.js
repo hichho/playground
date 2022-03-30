@@ -2,25 +2,26 @@
  * 接口代理的地址
  * @type {string}
  */
-const proxyHost = "https://movie.douban.com/";
+const proxyHost = 'https://movie.douban.com/';
 
 /**
  * 需要代理的接口
  * @type {string[]}
  */
-const proxyApis = ["/ithil_j"];
+const proxyApis = ['/ithil_j'];
 
 /**
  * 构建对象
  * @type {{}}
  */
-let obj = {};
-proxyApis.forEach(it => {
+const obj = {};
+proxyApis.forEach((it) => {
   obj[it] = {
     target: proxyHost,
-    ws: true, changeOrigin: true,
-    pathRewrite: {"^/": ""}
-  }
+    ws: true,
+    changeOrigin: true,
+    pathRewrite: { '^/': '' },
+  };
 });
 
 module.exports = obj;

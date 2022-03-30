@@ -10,7 +10,7 @@
 export default {
   mounted() {
     // 监听父页面向子页面的传参
-    window.addEventListener('message', (e) => {
+    window.addEventListener('message', () => {
       // console.log('父页面传输过来参数');
       // console.log(e.data);
     });
@@ -18,18 +18,18 @@ export default {
   methods: {
     // 子页面处发向父页面传参
     sonClick() {
-      let data = {
+      const data = {
         type: 1,
         code: 200,
         data: {
           name: '宁波市卫健委',
-          content: '宁波市卫健委数据'
-        }
+          content: '宁波市卫健委数据',
+        },
       };
       window.parent.postMessage(data, '*');
     },
 
-  }
+  },
 };
 </script>
 <style lang="less" scoped>

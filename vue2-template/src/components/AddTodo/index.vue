@@ -15,7 +15,7 @@ export default {
   methods: {
     add() {
       if (!this.value) {
-        alert('🐶请🐶填🐶写🐶');
+        // alert('🐶请🐶填🐶写🐶');
         return;
       }
       this.$emit('addTodo', {
@@ -24,8 +24,8 @@ export default {
         toggle: false,
       });
       this.value = undefined;
-    }
-  }
+    },
+  },
 };
 </script>
 <style lang="less" scoped>

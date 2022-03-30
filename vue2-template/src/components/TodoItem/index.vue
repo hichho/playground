@@ -12,7 +12,7 @@
 <script>
 export default {
   name: 'TodoItem',
-  props: [ 'todoItem' ],
+  props: ['todoItem'],
   data() {
     return {
       data: this.todoItem,
@@ -22,17 +22,15 @@ export default {
   },
   computed: {
     getToggleClass() {
-      return function() {
-        return this.data.toggle ? 'checked' : 'un-checked';
-      };
-    }
+      return () => (this.data.toggle ? 'checked' : 'un-checked');
+    },
   },
   methods: {
     toggle() {
       this.$emit('toggle', this.data.id);
-    }
+    },
   },
-  watch: {}
+  watch: {},
 };
 </script>
 <style lang="less" scoped>

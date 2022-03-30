@@ -1,7 +1,6 @@
 <template>
   <div class="f-container">
 
-
     <a-modal title="父级弹窗"
              :visible="visible"
              @ok="visible=false"
@@ -24,9 +23,8 @@
       </div>
     </div>
 
-
     <div class="right">
-      <iframe ref="fIframe" class="right-top" src="http://172.16.11.34:8081/#/childFrame" frameborder="0"></iframe>
+      <iframe ref="fIframe" class="right-top" src="http://172.16.11.34:8081/#/childFrame"></iframe>
       <div class="right-bottom">
         right-bottom
       </div>
@@ -41,31 +39,31 @@
 import http from '@/api/axios';
 
 export default {
+  name: 'FrameComponent',
   data() {
     return {
       visible: false,
       data: {
         name: '省卫健委',
-        content: '省卫健委数据'
-      }
+        content: '省卫健委数据',
+      },
     };
   },
   mounted() {
     window.addEventListener('message', this.handleClick);
 
     http({ url: '/app/banner/list', method: 'get', data: { id: '123' } })
-        .then(res => {
-          console.log(res);
-        });
-
+      .then(() => {
+        // console.log(res);
+      });
   },
   methods: {
     // 父页面处发向子页面传参
     fClick() {
-      let data = {
+      const data = {
         type: 2,
         code: 200,
-        data: '父页面面传输数据过来了'
+        data: '父页面面传输数据过来了',
       };
       this.$refs.fIframe.contentWindow.postMessage(data, '*');
     },
@@ -78,10 +76,10 @@ export default {
     fatherClick() {
       this.data = {
         name: '省卫健委',
-        content: '省卫健委数据'
+        content: '省卫健委数据',
       };
       this.visible = true;
-    }
+    },
   },
 };
 </script>

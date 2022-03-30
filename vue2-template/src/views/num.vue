@@ -2,32 +2,27 @@
   <div class="frame">
     <div>
       <img src="../../public/image/spotify.png"
-           style="width:42px;height: 42px;"/>
-      <SelfIncreasingNum class-name="num" :value="2"
-                         :init-value="0"
-      />
+           style="width:42px;height: 42px;" alt=""/>
     </div>
 
     <div>
       <img src="../../public/image/twitter.png"
-           style="width:42px;height: 42px;"/>
+           style="width:42px;height: 42px;" alt=""/>
       <!--      <SelfIncreasingNum/>-->
     </div>
 
     <div>
       <img src="../../public/image/youtube.png"
-           style="width:42px;height: 42px;"/>
+           style="width:42px;height: 42px;" alt=""/>
       <!--      <SelfIncreasingNum/>-->
     </div>
 
   </div>
 </template>
 <script>
-import SelfIncreasingNum from '@/components/SelfIncreasingNum';
 
 export default {
-  name: 'Num',
-  components: { SelfIncreasingNum }
+  name: 'NumComponent',
 };
 </script>
 <style scoped lang="less">

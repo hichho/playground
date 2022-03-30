@@ -3,7 +3,9 @@
     <div class="card">
       <div class="head">
         <div v-for="(item,index) in status" class="t-s-item" :style="getColor(index)"
-             @click="changeStatus(index)">
+             @click="changeStatus(index)"
+             :key="index"
+        >
           {{ item }}
         </div>
       </div>
@@ -17,8 +19,8 @@
   </div>
 </template>
 <script>
-import TodoItem from '@/components/TodoItem';
-import AddTodo from '@/components/AddTodo';
+import TodoItem from '@/components/TodoItem/index.vue';
+import AddTodo from '@/components/AddTodo/index.vue';
 
 export default {
   name: 'TodoList',
@@ -40,39 +42,39 @@ export default {
   },
   computed: {
     getColor() {
-      return function(index) {
+      return function getColour(index) {
         return Number(index) === this.value ? { color: 'white', fontWeight: 'bold' } : undefined;
       };
     },
     filterList() {
       switch (this.value) {
         case 1:
-          return this.todoList.filter(item => !item.toggle);
+          return this.todoList.filter((item) => !item.toggle);
         case 2:
-          return this.todoList.filter(item => item.toggle);
+          return this.todoList.filter((item) => item.toggle);
         default:
           return this.todoList;
       }
-    }
+    },
   },
   methods: {
     changeStatus(index) {
       this.value = Number(index);
     },
     handleToggle(id) {
-      this.todoList = this.todoList.map(item => {
+      this.todoList = this.todoList.map((item) => {
+        const rlt = item;
         if (item.id === id) {
-          item.toggle = !item.toggle;
+          rlt.toggle = !item.toggle;
         }
-        return item;
+        return rlt;
       });
     },
     handleAdd(addItem) {
       this.todoList.unshift(addItem);
-    }
-  }
-}
-;
+    },
+  },
+};
 </script>
 <style lang="less" scoped>
 .t-frame {
