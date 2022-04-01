@@ -1,18 +1,39 @@
-import {Controller, Get, HttpCode, Post, Req, Header} from '@nestjs/common';
+import { Controller, Get, HttpCode, Param, Post, Query, Redirect } from "@nestjs/common"
 
-@Controller('cats')
+@Controller("cats")
 export class CatsController {
+  @Get("getCat")
+  findAll(@Query() query: any): string {
+    return "this is all cats"
+  }
 
-    @Post()
-    @HttpCode(204)
-    @Header('Cache-Control', 'none')
-    create(): string {
-        return 'This action adds a new cat';
-    }
+  @Post("postCat")
+  postCat(): string {
+    return "post success"
+  }
 
+  @Get("g*t")
+  findCat(): string {
+    return "get single cat"
+  }
 
-    @Get('getCat')
-    findAll(@Req() request: Request): string {
-        return 'this action returns all cats';
-    }
+  @Get("testCode")
+  @HttpCode(203)
+  testCode(): string {
+    return "this is code"
+  }
+
+  @Get("redirect")
+  @Redirect("https://docs.nestjs.com", 302)
+  redirect(): string {
+    return "redirect"
+  }
+
+  @Get(":id")
+  findOne(@Param() params): string {
+    console.log(params)
+    return `this cats is ${params?.id} cat`
+  }
 }
+
+
