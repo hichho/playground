@@ -3,6 +3,7 @@
 /react-playground-buildByNext/node_modules/
 /react-playground-buildByNext/.next/
 /react-playground-buildByNext/out/
+/react-playground-buildByNext/yarn.lock
 /blog/back-end/.github/
 /express/client/node_modules
 /express/server/node_modules
