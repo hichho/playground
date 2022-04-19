@@ -7,10 +7,10 @@ const IndexPage = () => {
         <div className={less.frame}>
             <div className={less.head}>
                 <h1>浏览</h1>
-                <Avatar src={'./img/dog.jpeg'} className={less.avatar}/>
+                <Avatar src={'./img/dog.jpeg'} className={less.avatar} />
             </div>
 
-            <input className={less.search}/>
+            <input className={less.search} />
         </div>
     )
 }

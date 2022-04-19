@@ -14,9 +14,7 @@ const TodoListPage = () => {
 
     const [visibility, setVisibility] = useState<VisibilityType>(VisibilityType.All);
     const [themeColor, setColor] = useState<string>('#EE3A8C');
-
     const fatherComponentRenderTime = useRenderTimes();
-
     const getCss = (value: VisibilityType) => {
         return visibility === value ? styles.selected : styles.un_selected;
     }
