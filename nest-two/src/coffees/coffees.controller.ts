@@ -9,7 +9,6 @@ import {
   Patch,
   Post,
   Query,
-  Res,
 } from '@nestjs/common';
 import { CoffeesService } from './coffees.service';
 
