@@ -28,11 +28,11 @@
     "@nestjs/typeorm": "^8.0.3",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.13.2",
-    "pg": "^8.7.1",
+    "pg": "8.7.3",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
-    "rxjs": "^6.6.6",
-    "typeorm": "^0.2.44"
+    "rxjs": "^7.5.5",
+    "typeorm": "0.2.45"
   },
   "devDependencies": {
     "@nestjs/cli": "^7.6.0",
