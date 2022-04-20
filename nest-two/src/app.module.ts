@@ -16,7 +16,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       database: 'postgres',
       //自动加载模块
       autoLoadEntities: true,
-      //在typeOrm同步数据库，在production环境钟禁用
+      //在typeOrm创建entity时同步数据库，在production环境中禁用
       synchronize: true,
     }),
   ],
