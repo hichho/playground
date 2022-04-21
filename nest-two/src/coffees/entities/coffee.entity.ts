@@ -16,6 +16,8 @@ export class Coffee {
   name: string;
   @Column()
   brand: string;
+  @Column({ default: 0 })
+  recommendations: number;
   //主表
   @JoinTable()
   //cascade:在创建咖啡时，如果flavors还没有，则自动创建flavors，并将他们关联
