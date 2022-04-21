@@ -16,7 +16,10 @@ export class Coffee {
   name: string;
   @Column()
   brand: string;
+  //主表
   @JoinTable()
-  @ManyToMany((type) => Flavor, (flavor) => flavor.coffees)
-  flavors: string[];
+  //cascade:在创建咖啡时，如果flavors还没有，则自动创建flavors，并将他们关联
+  @ManyToMany((type) => Flavor, (flavor) => flavor.coffees, { cascade: true })
+  //cascade:boolean or other string
+  flavors: Flavor[];
 }
