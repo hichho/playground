@@ -24,3 +24,5 @@
 /vue2-template/node_modules
 /nest-two/node_modules
 /nest-two/dist
+/nest-two/yarn.lock
+/nest-two/package-lock.json
