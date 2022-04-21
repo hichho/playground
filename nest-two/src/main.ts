@@ -12,6 +12,9 @@ async function bootstrap() {
       forbidNonWhitelisted: true,
       //由网络请求传递的参数不是dto类的实例，所以进行转换,包括string,number类型
       transform: true,
+      transformOptions: {
+        enableImplicitConversion: true, //自动的将request传递的值进行转换
+      },
     }),
   );
   await app.listen(3000);
