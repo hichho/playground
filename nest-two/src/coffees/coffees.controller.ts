@@ -18,7 +18,7 @@ import { UpdateCoffeeDto } from './dto/update-coffee.dto';
 export class CoffeesController {
   constructor(private readonly coffeesService: CoffeesService) {}
 
-  @Get('/flavors')
+  @Get()
   findAll(@Query() paginationQuery) {
     // const { limit, offset } = paginationQuery;
     return this.coffeesService.findAll();
@@ -29,7 +29,7 @@ export class CoffeesController {
     return this.coffeesService.findOne('' + id);
   }
 
-  @Post('/create')
+  @Post()
   @HttpCode(HttpStatus.GONE)
   create(@Body() createCoffeeDto: CreateCoffeeDto) {
     return this.coffeesService.create(createCoffeeDto);
