@@ -22,8 +22,8 @@
 /nest-project/dist
 /vue2-template/dist
 /vue2-template/node_modules
-/nest-two/node_modules
-/nest-two/dist
-/nest-two/yarn.lock
-/nest-two/package-lock.json
-/nest-two/yarn-error.log
+/nest/node_modules
+/nest/dist
+/nest/yarn.lock
+/nest/package-lock.json
+/nest/yarn-error.log
