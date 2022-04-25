@@ -1,9 +1,11 @@
 import {defineConfig} from 'umi';
-const apiHost = 'http://192.168.3.20:8084/';
+const apiHost = 'https://api-build.kepai365.com/';
+// const apiHost = '';
 
 export default defineConfig({
+    antd: {mobile: false},
     request: {dataField: ''},
-    title: '人社网络安全首页',
+    title: '监管密码宝',
     locale: {
         default: 'zh-CN'
     },
@@ -17,7 +19,7 @@ export default defineConfig({
     targets: {safari: 9, ios: 9, ie: 9},
     ignoreMomentLocale: true,
     proxy: {
-        '/app': {
+        '/wxController': {
             target: apiHost,
             changeOrigin: true,
             pathRewrite: {'^/': ''},
