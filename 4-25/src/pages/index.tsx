@@ -3,18 +3,26 @@ import {useRequest} from "@@/plugin-request/request";
 import style from '@/styles/index.less'
 import {IUserInfo} from "@/type";
 import useQuery from "@/hooks/useQuery";
-import {Input, Toast, DatePicker} from "antd-mobile";
+import {Input, Toast} from "antd-mobile";
 import {ToastHandler} from "antd-mobile/2x/es/components/toast";
+import Constants from "@/constants";
 import dayjs from "dayjs";
 
+const init = (): string => {
+    return dayjs().format('YYYY-MM-DD');
+}
+
 export default function IndexPage() {
-    //logic
+    //hook
     const [userInfo, setUserInfo] = useState<IUserInfo>({
-        id: '', time: '', code: ''
+        id: '', time: init(), code: ''
     });
     const handler = useRef<ToastHandler>();
     const {loading, data} = useRequest({url: '/wxController/getopenid', params: useQuery()});
-    const [visible, setVisible] = useState<boolean>(false);
+    const submit = useRequest({
+        url: '/app/system/download', method: 'GET', params: userInfo
+    }, {manual: true});
+    const [password,setPassword] = useState<string>('');
     useEffect(() => {
         if (loading) {
             handler.current = Toast.show({
@@ -27,16 +35,22 @@ export default function IndexPage() {
         }
     }, [loading]);
 
-    //render
-    const renderDate = () => {
-            return (
-                <div className={userInfo?.time?style.date:style.empty}
-                     onClick={()=>setVisible(true)}>
-                    {userInfo?.time||'请选择日期'}
-                </div>
-            )
+    const verify = () => {
+        return (userInfo.id && userInfo.time && userInfo.code) && (userInfo.code.length === 4);
     }
 
+    const handleClick = () => {
+        if (verify()) {
+            submit.run();
+        } else {
+            Toast.show({
+                content: '请填写完整',
+                duration: 500
+            })
+        }
+    }
+
+    console.log(submit.data)
     return (
         <Suspense fallback={<h3>loading...</h3>}>
             <div
@@ -44,7 +58,7 @@ export default function IndexPage() {
                 <img src={'./image/bg.png'} className={style.bg} alt={''}/>
                 {/*    head*/}
                 <div className={style.head}>
-                    <img src={'./image/lock-icon.png'} className={style.icon}/>
+                    <img src={'./image/lock-icon.png'} className={style.icon} alt={Constants.Title}/>
                     <span className={style.title}>监管密码宝V5.5</span>
                 </div>
                 {/*body*/}
@@ -69,18 +83,9 @@ export default function IndexPage() {
                             <span>期</span>
                         </div>
                         <div className={style.line}></div>
-                        {renderDate()}
-                        <DatePicker
-                            value={new Date(userInfo.time)}
-                            title='时间选择'
-                            visible={visible}
-                            onClose={() => {
-                                setVisible(false)
-                            }}
-                            onConfirm={val => {
-                                setUserInfo({...userInfo,time:dayjs(val).format('YYYY-MM-DD')})
-                            }}
-                        />
+                        <div className={style.date}>
+                            {userInfo.time}
+                        </div>
                     </div>
                     <div className={style.input_frame}>
                         <span className={style.label_block}>
@@ -104,6 +109,18 @@ export default function IndexPage() {
                         />
                     </div>
 
+                    <div className={style.tips}>
+                        请先输入任意4位数字的随机码，再点击生成登录密码
+                    </div>
+
+                    <div className={verify() ? style.btn : style.block_btn}
+                         onClick={() => handleClick()}
+                    >生成登录密码
+                    </div>
+
+
+                    <div className={style.pw}>本次登录密码</div>
+                    <div className={style.pw}>123434444</div>
                 </div>
             </div>
         </Suspense>

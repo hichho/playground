@@ -1,4 +1,4 @@
-@fontSize:16px;
+@fontSize: 16px;
 .frame {
   width: 100vw;
   font-size: @fontSize;
@@ -6,14 +6,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
 
   .bg {
-    object-fit: contain;
+    object-fit: cover;
     height: 100vh;
     position: absolute;
     top: 0;
-    left: 0;
     z-index: 1;
+    width:100vw;
   }
 
   .head {
@@ -44,41 +45,76 @@
     width: calc(100vw - 8px);
     z-index: 2;
     margin-bottom: 4px;
-    padding: 32px 0;
+    padding-top: 16px;
 
     .input_frame {
       width: calc(100% - 24px);
-      background: rgba(244,244,244,0.9);
-      box-shadow: 0 0 2px 2px rgba(12,12,12,0.08);
-      margin-bottom: 24px;
+      background: rgba(244, 244, 244, 0.9);
+      box-shadow: 0 0 2px 2px rgba(12, 12, 12, 0.08);
+      margin-top: 24px;
       display: flex;
       align-items: center;
       height: 42px;
       border-radius: 4px;
-      .label_block{
+
+      .label_block {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width:78px;
+        width: 78px;
         margin-left: 12px;
       }
-      .line{
-        width:1px;
+
+      .line {
+        width: 1px;
         height: 24px;
-        background: rgba(23,23,23,0.3);
-        margin:0 12px;
+        background: rgba(23, 23, 23, 0.3);
+        margin: 0 12px;
       }
-      .input{
-        --font-size:@fontSize;
-        width:calc(100% - 128px);
+
+      .input {
+        --font-size: @fontSize;
+        width: calc(100% - 128px);
       }
-      .date{
+
+      .date {
         display: flex;
         flex-grow: 1;
       }
-      .empty{
-        color:#cccccc;
-      }
+    }
+
+    .tips {
+      font-size: 13px;
+      color: red;
+    }
+
+    .default_btn {
+      width: 192px;
+      height: 44px;
+      margin-top: 38px;
+      display: flex;
+      justify-content: center;
+      border-radius: 44px;
+      align-items: center;
+      font-size: 18px;
+      margin-bottom: 28px;
+    }
+
+    .btn {
+      .default_btn();
+      background: @primary-color;
+      color: white;
+    }
+
+    .block_btn {
+      .default_btn();
+      background: rgba(172, 172, 172);
+      color: white;
+    }
+    .pw{
+      color:white;
+      margin-bottom: 28px;
+      font-size: 18px;
     }
   }
 }
