@@ -27,3 +27,6 @@
 /nest/yarn.lock
 /nest/package-lock.json
 /nest/yarn-error.log
+/4-25/dist/
+/4-25/src/.umi
+/4-25/src/.umi-production
