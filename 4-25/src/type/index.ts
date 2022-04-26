@@ -1,5 +1,10 @@
 export interface IUserInfo {
-    id: string;
-    time: string;
-    code: string;
+    openId: string;
+    curDate: string;
+    randomCode: string;
+}
+export interface IUserApiRlt{
+    code:number;
+    msg:string;
+    data:string;
 }

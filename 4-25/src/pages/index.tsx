@@ -1,7 +1,7 @@
 import React, {Suspense, useEffect, useRef, useState} from 'react';
 import {useRequest} from "@@/plugin-request/request";
 import style from '@/styles/index.less'
-import {IUserInfo} from "@/type";
+import {IUserApiRlt, IUserInfo} from "@/type";
 import useQuery from "@/hooks/useQuery";
 import {Input, Toast} from "antd-mobile";
 import {ToastHandler} from "antd-mobile/2x/es/components/toast";
@@ -15,14 +15,22 @@ const init = (): string => {
 export default function IndexPage() {
     //hook
     const [userInfo, setUserInfo] = useState<IUserInfo>({
-        id: '', time: init(), code: ''
+        openId: '', curDate: init(), randomCode: ''
     });
     const handler = useRef<ToastHandler>();
-    const {loading, data} = useRequest({url: '/wxController/getopenid', params: useQuery()});
-    const submit = useRequest({
-        url: '/app/system/download', method: 'GET', params: userInfo
-    }, {manual: true});
-    const [password,setPassword] = useState<string>('');
+    const [password, setPassword] = useState<string>('');
+    const {loading, data} = useRequest<IUserApiRlt>({url: '/wxController/getopenid', params: useQuery()});
+    const transDate=()=>{
+        return {...userInfo,curDate:userInfo.curDate.replaceAll('-','')}
+    }
+    const submit = useRequest<IUserApiRlt>({
+        url: '/wxController/genertorPassword', method: 'GET', params: transDate()
+    }, {
+        manual: true, onSuccess: (res) => {
+            Toast.show({content: '成功'});
+            setPassword(res.msg)
+        }
+    });
     useEffect(() => {
         if (loading) {
             handler.current = Toast.show({
@@ -32,12 +40,15 @@ export default function IndexPage() {
             })
         } else {
             handler.current?.close();
+            setUserInfo({...userInfo, openId: data?.data??''})
         }
     }, [loading]);
 
     const verify = () => {
-        return (userInfo.id && userInfo.time && userInfo.code) && (userInfo.code.length === 4);
+        return (userInfo.openId && userInfo.curDate && userInfo.randomCode) && (userInfo.randomCode.length === 4);
     }
+
+
 
     const handleClick = () => {
         if (verify()) {
@@ -50,7 +61,6 @@ export default function IndexPage() {
         }
     }
 
-    console.log(submit.data)
     return (
         <Suspense fallback={<h3>loading...</h3>}>
             <div
@@ -71,11 +81,9 @@ export default function IndexPage() {
                             <span>号</span>
                         </div>
                         <div className={style.line}></div>
-                        <Input placeholder={'请输入用户编号'}
-                               className={style.input}
-                               value={userInfo.id}
-                               onChange={(val) => setUserInfo({...userInfo, id: val})}
-                        />
+                        <div className={style.date}>
+                            {userInfo.openId}
+                        </div>
                     </div>
                     <div className={style.input_frame}>
                         <div className={style.label_block}>
@@ -84,7 +92,7 @@ export default function IndexPage() {
                         </div>
                         <div className={style.line}></div>
                         <div className={style.date}>
-                            {userInfo.time}
+                            {userInfo.curDate}
                         </div>
                     </div>
                     <div className={style.input_frame}>
@@ -96,7 +104,7 @@ export default function IndexPage() {
                         <div className={style.line}></div>
                         <Input placeholder={'请输入用户编号'}
                                className={style.input}
-                               value={userInfo.code}
+                               value={userInfo.randomCode}
                                onChange={(val) => {
                                    if (val.length > 4) {
                                        Toast.show({
@@ -104,7 +112,7 @@ export default function IndexPage() {
                                        })
                                        return;
                                    }
-                                   setUserInfo({...userInfo, code: val})
+                                   setUserInfo({...userInfo, randomCode: val})
                                }}
                         />
                     </div>
@@ -118,9 +126,14 @@ export default function IndexPage() {
                     >生成登录密码
                     </div>
 
+                    {
+                        password && <div className={style.pw}>本次登录密码：</div>
 
-                    <div className={style.pw}>本次登录密码</div>
-                    <div className={style.pw}>123434444</div>
+                    }
+                    {
+                        password &&
+                        <div className={style.pw}>{password}</div>
+                    }
                 </div>
             </div>
         </Suspense>

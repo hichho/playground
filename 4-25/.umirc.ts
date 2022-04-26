@@ -24,6 +24,11 @@ export default defineConfig({
             changeOrigin: true,
             pathRewrite: {'^/': ''},
         },
+        '/app': {
+            target: apiHost,
+            changeOrigin: true,
+            pathRewrite: {'^/': ''},
+        },
     },
 
     fastRefresh: {},
