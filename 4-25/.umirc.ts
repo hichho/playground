@@ -11,7 +11,7 @@ export default defineConfig({
     nodeModulesTransform: {
         type: 'none',
     },
-    publicPath: '/',
+    publicPath: './',
     hash: true,
     history: {type: 'hash'},
     theme: {'primary-color': '#004199', 'font-base-size': '14px'},
