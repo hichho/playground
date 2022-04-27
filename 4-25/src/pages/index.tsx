@@ -8,20 +8,16 @@ import {ToastHandler} from "antd-mobile/2x/es/components/toast";
 import Constants from "@/constants";
 import dayjs from "dayjs";
 
-const init = (): string => {
-    return dayjs().format('YYYY-MM-DD');
-}
-
 export default function IndexPage() {
     //hook
     const [userInfo, setUserInfo] = useState<IUserInfo>({
-        openId: '', curDate: init(), randomCode: ''
+        openId: '', curDate: dayjs().format('YYYY-MM-DD'), randomCode: ''
     });
     const handler = useRef<ToastHandler>();
     const [password, setPassword] = useState<string>('');
     const {loading, data} = useRequest<IUserApiRlt>({url: '/wxController/getopenid', params: useQuery()});
-    const transDate=()=>{
-        return {...userInfo,curDate:userInfo.curDate.replaceAll('-','')}
+    const transDate = () => {
+        return {...userInfo, curDate: userInfo.curDate.replaceAll('-', '')}
     }
     const submit = useRequest<IUserApiRlt>({
         url: '/wxController/genertorPassword', method: 'GET', params: transDate()
@@ -40,14 +36,13 @@ export default function IndexPage() {
             })
         } else {
             handler.current?.close();
-            setUserInfo({...userInfo, openId: data?.data??''})
+            setUserInfo({...userInfo, openId: data?.data ?? ''})
         }
     }, [loading]);
 
     const verify = () => {
         return (userInfo.openId && userInfo.curDate && userInfo.randomCode) && (userInfo.randomCode.length === 4);
     }
-
 
 
     const handleClick = () => {

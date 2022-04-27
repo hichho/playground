@@ -1,6 +1,5 @@
 import {defineConfig} from 'umi';
-const apiHost = 'https://api-build.kepai365.com/';
-// const apiHost = '';
+const apiHost = 'http://mmb.cnywinfo.com/';
 
 export default defineConfig({
     antd: {mobile: false},
@@ -20,11 +19,6 @@ export default defineConfig({
     ignoreMomentLocale: true,
     proxy: {
         '/wxController': {
-            target: apiHost,
-            changeOrigin: true,
-            pathRewrite: {'^/': ''},
-        },
-        '/app': {
             target: apiHost,
             changeOrigin: true,
             pathRewrite: {'^/': ''},
