@@ -1,12 +1,12 @@
-import router from './index';
+import router from './index'
 
 /**
  * 命令式的路由跳转
  */
 const goVisual = () => {
-  router.push('/visual');
-};
+  router.push('/visual')
+}
 
 export default {
-  goVisual,
-};
+  goVisual
+}
