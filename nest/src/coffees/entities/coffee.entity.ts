@@ -13,7 +13,10 @@ export class Coffee {
   @PrimaryGeneratedColumn()
   id: number;
   @Column()
+  //用来测试数据库迁移(name->title),32集数据库迁移相关/migrations
   name: string;
+  @Column({ nullable: true })
+  description: string;
   @Column()
   brand: string;
   @Column({ default: 0 })
