@@ -65,6 +65,7 @@ export default {
       }
       this.$refs.fIframe.contentWindow.postMessage(data, '*')
     },
+
     handleClick(e) {
       if (e.data.data) {
         this.data = e.data.data

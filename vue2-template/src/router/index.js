@@ -1,42 +1,47 @@
-import Vue from 'vue';
-import VueRouter from 'vue-router';
+import Vue from 'vue'
+import VueRouter from 'vue-router'
 
-Vue.use(VueRouter);
-const insidePush = VueRouter.prototype.push;
+Vue.use(VueRouter)
+const insidePush = VueRouter.prototype.push
 VueRouter.prototype.push = function push(location) {
-  return insidePush.call(this, location)
-    .catch((err) => err);
-};
+  return insidePush.call(this, location).catch((err) => err)
+}
 
 const routes = [
   {
-    path: '/',
+    path: '/num',
     name: 'num',
-    component: () => import('@/views/num.vue'),
+    component: () => import('@/views/num.vue')
   },
   {
     path: '/todolist',
     name: 'todolist',
     component: () => import('@/views/todoList.vue'),
-    meta: { title: 'todoList' },
+    meta: { title: 'todoList' }
   },
   {
     path: '/frame',
     name: 'frame',
     component: () => import('@/views/frame.vue'),
-    meta: { title: 'frame' },
+    meta: { title: 'frame' }
   },
   {
     path: '/childFrame',
     name: 'childFrame',
-    component: () => import('@/views/childFrame.vue'),
+    component: () => import('@/views/childFrame.vue')
   },
-];
+  {
+    path: '/',
+    name: 'demo',
+    component: () => import('@/views/index.vue'),
+    meta: { title: 'demo' }
+  }
+]
 
 const router = new VueRouter({
   mode: 'hash',
   base: process.env.BASE_URL,
-  routes,
-});
+  routes
+})
 
-export default router;
+export default router

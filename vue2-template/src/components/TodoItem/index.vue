@@ -15,23 +15,22 @@ export default {
   props: ['todoItem'],
   data() {
     return {
-      data: this.todoItem,
-    };
+      data: this.todoItem
+    }
   },
-  mounted() {
-  },
+  mounted() {},
   computed: {
     getToggleClass() {
-      return () => (this.data.toggle ? 'checked' : 'un-checked');
-    },
+      return () => (this.data.toggle ? 'checked' : 'un-checked')
+    }
   },
   methods: {
     toggle() {
-      this.$emit('toggle', this.data.id);
-    },
+      this.$emit('toggle', this.data.id)
+    }
   },
-  watch: {},
-};
+  watch: {}
+}
 </script>
 <style lang="less" scoped>
 .t-item {

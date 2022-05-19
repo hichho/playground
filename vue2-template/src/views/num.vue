@@ -1,29 +1,36 @@
 <template>
   <div class="frame">
     <div>
-      <img src="../../public/image/spotify.png"
-           style="width:42px;height: 42px;" alt=""/>
+      <img
+        src="../../public/image/spotify.png"
+        style="width: 42px; height: 42px"
+        alt=""
+      />
     </div>
 
     <div>
-      <img src="../../public/image/twitter.png"
-           style="width:42px;height: 42px;" alt=""/>
+      <img
+        src="../../public/image/twitter.png"
+        style="width: 42px; height: 42px"
+        alt=""
+      />
       <!--      <SelfIncreasingNum/>-->
     </div>
 
     <div>
-      <img src="../../public/image/youtube.png"
-           style="width:42px;height: 42px;" alt=""/>
+      <img
+        src="../../public/image/youtube.png"
+        style="width: 42px; height: 42px"
+        alt=""
+      />
       <!--      <SelfIncreasingNum/>-->
     </div>
-
   </div>
 </template>
 <script>
-
 export default {
-  name: 'NumComponent',
-};
+  name: 'NumComponent'
+}
 </script>
 <style scoped lang="less">
 .frame {

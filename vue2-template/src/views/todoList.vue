@@ -2,25 +2,31 @@
   <div class="t-frame">
     <div class="card">
       <div class="head">
-        <div v-for="(item,index) in status" class="t-s-item" :style="getColor(index)"
-             @click="changeStatus(index)"
-             :key="index"
+        <div
+          v-for="(item, index) in status"
+          class="t-s-item"
+          :style="getColor(index)"
+          @click="changeStatus(index)"
+          :key="index"
         >
           {{ item }}
         </div>
       </div>
 
-      <TodoItem v-for="(item) in filterList" :key="item.id"
-                :todo-item="item" @toggle="handleToggle"
+      <TodoItem
+        v-for="item in filterList"
+        :key="item.id"
+        :todo-item="item"
+        @toggle="handleToggle"
       />
 
-      <AddTodo @addTodo="handleAdd"/>
+      <AddTodo @addTodo="handleAdd" />
     </div>
   </div>
 </template>
 <script>
-import TodoItem from '@/components/TodoItem/index.vue';
-import AddTodo from '@/components/AddTodo/index.vue';
+import TodoItem from '@/components/TodoItem/index.vue'
+import AddTodo from '@/components/AddTodo/index.vue'
 
 export default {
   name: 'TodoList',
@@ -30,51 +36,53 @@ export default {
       status: {
         0: '所有',
         1: '未完成',
-        2: '已完成',
+        2: '已完成'
       },
       value: 0,
       todoList: [
         { id: 1, content: '语文课', toggle: false },
         { id: 2, content: '数学课', toggle: false },
-        { id: 3, content: '英语课', toggle: false },
-      ],
-    };
+        { id: 3, content: '英语课', toggle: false }
+      ]
+    }
   },
   computed: {
     getColor() {
       return function getColour(index) {
-        return Number(index) === this.value ? { color: 'white', fontWeight: 'bold' } : undefined;
-      };
+        return Number(index) === this.value
+          ? { color: 'white', fontWeight: 'bold' }
+          : undefined
+      }
     },
     filterList() {
       switch (this.value) {
         case 1:
-          return this.todoList.filter((item) => !item.toggle);
+          return this.todoList.filter((item) => !item.toggle)
         case 2:
-          return this.todoList.filter((item) => item.toggle);
+          return this.todoList.filter((item) => item.toggle)
         default:
-          return this.todoList;
+          return this.todoList
       }
-    },
+    }
   },
   methods: {
     changeStatus(index) {
-      this.value = Number(index);
+      this.value = Number(index)
     },
     handleToggle(id) {
       this.todoList = this.todoList.map((item) => {
-        const rlt = item;
+        const rlt = item
         if (item.id === id) {
-          rlt.toggle = !item.toggle;
+          rlt.toggle = !item.toggle
         }
-        return rlt;
-      });
+        return rlt
+      })
     },
     handleAdd(addItem) {
-      this.todoList.unshift(addItem);
-    },
-  },
-};
+      this.todoList.unshift(addItem)
+    }
+  }
+}
 </script>
 <style lang="less" scoped>
 .t-frame {

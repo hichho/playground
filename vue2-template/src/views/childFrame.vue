@@ -13,7 +13,7 @@ export default {
     window.addEventListener('message', () => {
       // console.log('父页面传输过来参数');
       // console.log(e.data);
-    });
+    })
   },
   methods: {
     // 子页面处发向父页面传参
@@ -23,14 +23,13 @@ export default {
         code: 200,
         data: {
           name: '宁波市卫健委',
-          content: '宁波市卫健委数据',
-        },
-      };
-      window.parent.postMessage(data, '*');
-    },
-
-  },
-};
+          content: '宁波市卫健委数据'
+        }
+      }
+      window.parent.postMessage(data, '*')
+    }
+  }
+}
 </script>
 <style lang="less" scoped>
 .child-frame {
