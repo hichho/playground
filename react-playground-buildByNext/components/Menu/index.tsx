@@ -8,7 +8,7 @@ import styles from "../../styles/Home.module.css";
 const Menu: FC = (): ReactElement => {
     return (
         <div className={styles.container}>
-            <h1>this is my react-playground build by next</h1>
+            <h1>react-playground build by next</h1>
             <ul>
                 {MenuData.map((item: IMenuTyping) => {
                     return <li key={item.id}>
