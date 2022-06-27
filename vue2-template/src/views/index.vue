@@ -1,14 +1,13 @@
 <template>
-  <div class="i-frame">123</div>
+  <div class="i-frame">
+    <div class="part">left</div>
+    <div class="center">center</div>
+    <div class="part">right</div>
+  </div>
 </template>
 <script>
 export default {
-  name: 'IndexComponent',
-  data() {
-    return {
-      componentKey: 1
-    }
-  }
+  name: 'IndexComponent'
 }
 </script>
 <style lang="less">
@@ -18,6 +17,16 @@ export default {
   display: flex;
   justify-content: center;
   align-content: center;
-  background: rgb(12, 12, 12, 0.4);
+  font-size: 14px;
+  .part {
+    width: 360px;
+    background: gold;
+    height: 1080px;
+  }
+  .center {
+    width: 1200px;
+    height: 1080px;
+    background: red;
+  }
 }
 </style>
