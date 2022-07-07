@@ -1,32 +1,26 @@
 <template>
-  <div class="i-frame">
-    <div class="part">left</div>
-    <div class="center">center</div>
-    <div class="part">right</div>
-  </div>
+  <div class="i-frame">123</div>
 </template>
 <script>
+import MockApi from '@/api/mockApi'
+
 export default {
-  name: 'IndexComponent'
+  name: 'IndexComponent',
+  mounted() {
+    this.getData()
+  },
+  methods: {
+    getData() {
+      MockApi.mockDemo().then((res) => {
+        console.log(res)
+      })
+    }
+  }
 }
 </script>
 <style lang="less">
 .i-frame {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  font-size: 14px;
-  .part {
-    width: 360px;
-    background: gold;
-    height: 1080px;
-  }
-  .center {
-    width: 1200px;
-    height: 1080px;
-    background: red;
-  }
+  width: 100vw;
+  height: 100vh;
 }
 </style>

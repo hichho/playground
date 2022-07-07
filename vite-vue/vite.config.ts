@@ -20,8 +20,8 @@ export default defineConfig({
     },
     server:{
         proxy:{
-            "/app": "http://zcse-index.tmp.kepai365.ltd/",
-            "/upload": "http://zcse-index.tmp.kepai365.ltd/"
+            "/app": "",
+            "/upload": ""
         }
     },
     base:'./',

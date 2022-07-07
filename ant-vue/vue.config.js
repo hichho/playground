@@ -10,7 +10,7 @@ const proxyApis = [ '/app' ];
 let proxy = {};
 proxyApis.forEach(item => {
   proxy[item] = {
-    target: 'http://zcse-index.tmp.kepai365.ltd/',
+    target: '',
     ws: true, changeOrigin: true, pathRewrite: { '^/': '' }
   };
 });
