@@ -1,11 +1,11 @@
-import router from '@/router/index'
+import router from '@/router/index';
 
 const goProperty = () => {
-    router.push('/property')
-}
+  router.push('/property');
+};
 
 const goIndex = () => {
-    router.push('/')
-}
+  router.push('/');
+};
 
-export default {goProperty, goIndex}
+export default { goProperty, goIndex };
