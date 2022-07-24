@@ -8,19 +8,23 @@
     <div>
       {{ JSON.stringify(data) }}
     </div>
+    <PropsComponent :count="count"/>
+    <a-button type="primary" @click="handleAdd"> add</a-button>
   </div>
 </template>
 <script>
-import {defineComponent, inject} from "vue";
+import {defineComponent, inject, ref} from "vue";
 import {Button} from 'ant-design-vue'
 import RouterPush from "@/router/routerPush";
 import {useGetDemoList} from "../request/indexPageApi";
+import PropsComponent from "@/components/PropsComponent/index.vue";
 
 export default defineComponent({
   name: 'IndexPage',
-  components:{AButton:Button},
+  components:{PropsComponent, AButton:Button},
   setup() {
     const openModal = inject('openModal')
+    const count = ref(0);
     const {loading, data} = useGetDemoList();
 
     function handleClick() {
@@ -31,7 +35,12 @@ export default defineComponent({
       openModal()
     }
 
-    return {loading, data, handleClick, handleOpenModal}
+    function handleAdd(){
+      count.value ++;
+      console.log(count.value)
+    }
+
+    return {loading, data, handleClick, handleOpenModal,count,handleAdd}
   }
 })
 </script>
