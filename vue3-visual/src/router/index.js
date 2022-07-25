@@ -12,6 +12,9 @@ const routes = [{
         {
             path: "/property", name: "资产信息", component: () => import("@/pages/property.vue")
         },
+        {
+            path: "/scale", name: "缩放", component: () => import("@/pages/scale.vue")
+        },
     ]
 }];
 const router = createRouter({
