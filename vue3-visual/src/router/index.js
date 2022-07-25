@@ -1,9 +1,9 @@
-import {createRouter, createWebHashHistory} from 'vue-router';
+import { createRouter, createWebHashHistory } from 'vue-router';
 
 const title = "可视化";
 
 const routes = [{
-    path: "/", meta: {title},
+    path: "/", meta: { title },
     component: () => import("@/layout/index.vue"),
     children: [
         {
@@ -14,6 +14,9 @@ const routes = [{
         },
         {
             path: "/scale", name: "缩放", component: () => import("@/pages/scale.vue")
+        },
+        {
+            path: "/demo", name: "demo", component: () => import("@/pages/demo.vue")
         },
     ]
 }];
