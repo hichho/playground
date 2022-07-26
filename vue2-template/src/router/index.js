@@ -35,6 +35,12 @@ const routes = [
     name: 'demo',
     component: () => import('@/views/index.vue'),
     meta: { title: 'demo' }
+  },
+  {
+    path: '/scale',
+    name: 'scale',
+    component: () => import('@/views/scale.vue'),
+    meta: { title: 'scale' }
   }
 ]
 

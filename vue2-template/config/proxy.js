@@ -2,7 +2,7 @@
  * 接口代理的地址
  * @type {string}
  */
-const proxyHost = ''
+const proxyHost = 'https://www.bing.com'
 
 /**
  * 需要代理的接口

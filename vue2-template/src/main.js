@@ -8,7 +8,6 @@ import scroll from 'vue-seamless-scroll'
 import '@/mock'
 import Antd from 'ant-design-vue'
 import 'ant-design-vue/dist/antd.css'
-import 'amfe-flexible/index'
 
 Vue.config.productionTip = false
 Vue.use(Antd)
