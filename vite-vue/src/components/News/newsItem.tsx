@@ -23,9 +23,9 @@ export default defineComponent({
         }
     },
     setup(props) {
-        const {loading, data, run} = useNewsItemApi(props.typeValue, true);
+        // const {loading, data, run} = useNewsItemApi(props.typeValue, true);
 
-        onMounted(() => run(0, '', props.typeValue))
+        // onMounted(() => run(0, '', props.typeValue))
 
         return () => (
             <div class={less.frame}>
@@ -42,30 +42,30 @@ export default defineComponent({
 
                 <div class={less.row_line}/>
 
-                {
-                    loading.value && <div class={less.list}>
-                    <Spin/>
-                  </div>
-                }
+                {/*{*/}
+                {/*    loading.value && <div class={less.list}>*/}
+                {/*    <Spin/>*/}
+                {/*  </div>*/}
+                {/*}*/}
 
 
-                {
-                    !loading.value &&
-                  <div class={less.list}>
-                      {data?.value?.data?.map(item => {
-                          return <div class={less.item} key={item.id}
-                                      onClick={() => import('@/router/routerManager').then(res => res.toDetail(props.typeValue, item.id))}>
-                              <Paragraph ellipsis={true}
-                                         class={less.title}
-                                         content={item.name}>
-                              </Paragraph>
-                              <span class={less.time}>
-                                {item.createTime}
-                            </span>
-                          </div>
-                      })}
-                  </div>
-                }
+                {/*{*/}
+                {/*    !loading.value &&*/}
+                {/*  <div class={less.list}>*/}
+                {/*      {data?.value?.data?.map(item => {*/}
+                {/*          return <div class={less.item} key={item.id}*/}
+                {/*                      onClick={() => import('@/router/routerManager').then(res => res.toDetail(props.typeValue, item.id))}>*/}
+                {/*              <Paragraph ellipsis={true}*/}
+                {/*                         class={less.title}*/}
+                {/*                         content={item.name}>*/}
+                {/*              </Paragraph>*/}
+                {/*              <span class={less.time}>*/}
+                {/*                {item.createTime}*/}
+                {/*            </span>*/}
+                {/*          </div>*/}
+                {/*      })}*/}
+                {/*  </div>*/}
+                {/*}*/}
             </div>
         )
     }

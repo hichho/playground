@@ -22,10 +22,14 @@
   "dependencies": {
     "ahooks": "^2.10.12",
     "antd": "^4.17.1",
+    "moment": "^2.29.4",
+    "prism": "link:react-syntax-highlighter/dist/esm/styles/prism",
     "qs": "^6.10.1",
     "react": "17.x",
     "react-dom": "17.x",
-    "umi": "^3.5.20"
+    "react-syntax-highlighter": "^15.5.0",
+    "umi": "^3.5.20",
+    "zh-cn": "link:moment/locale/zh-cn"
   },
   "umi-request": "1.2.19",
   "devDependencies": {
