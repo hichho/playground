@@ -2,30 +2,21 @@
   <div>
     <h1>可视化</h1>
     <vue-final-modal
-      name="model-1"
-      classes="modal-container"
       v-model="modalVisible"
+      classes="modal-container"
       content-class="modal-content"
       :drag="true"
+      :dragSelector="'.modal__title'"
     >
-      <button class="modal__close" @click="modalVisible = false"> X </button>
-      <span class="modal__title">Hello, vue-final-modal</span>
-      <div class="modal__content" @click="popConfirmVisible = true">
-        <p
-          >Vue Final Modal is a renderless, stackable, detachable and lightweight modal
-          component.</p
-        >
+      <button class="modal__close" @click="modalVisible = false"> x </button>
+      <div class="modal__title" style="border: 1px solid red">Hello, vue-final-modal</div>
+      <div class="modal__content">
+        <p v-for="i in 5" :key="i">
+          Vue Final Modal is a renderless, stackable, detachable and lightweight modal component.
+        </p>
       </div>
     </vue-final-modal>
 
-    <vue-final-modal
-      name="model-1"
-      classes="modal-container"
-      v-model="popConfirmVisible"
-      content-class="modal-content"
-    >
-      <div style="width: 100px; height: 100px; border: 1px solid gold"> 123 </div>
-    </vue-final-modal>
     <router-view />
   </div>
 </template>
@@ -41,7 +32,6 @@
     setup() {
       provide('openModal', openModal);
       const modalVisible = ref(false);
-      const popConfirmVisible = ref(false);
 
       function openModal() {
         modalVisible.value = true;
@@ -49,17 +39,43 @@
 
       return {
         modalVisible,
-        popConfirmVisible,
       };
     },
   });
 </script>
 <style lang="less" scoped>
-  @import url(../styles/global.less);
-
+  ::v-deep .modal-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  ::v-deep .modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-height: 90%;
+    margin: 0 1rem;
+    padding: 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.25rem;
+    background: #fff;
+  }
   .modal__title {
+    margin: 0 2rem 0.5rem 0;
     font-size: 1.5rem;
     font-weight: 700;
-    color: black;
+  }
+  .modal__content {
+    flex-grow: 1;
+    overflow-y: auto;
+  }
+  .modal__close {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+  .dark-mode div::v-deep .modal-content {
+    border-color: #2d3748;
+    background-color: #1a202c;
   }
 </style>
