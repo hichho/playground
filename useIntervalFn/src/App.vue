@@ -7,12 +7,25 @@
 </template>
 
 <script setup>
-import {ref} from 'vue';
-import {useIntervalFn} from "./useIntervalFn.js";
+import { ref } from "vue";
+import { useIntervalFn } from "./useIntervalFn.js";
 
-const namePool = ['🤖', '👽', '🎃'];
+const namePool = ["🤖", "👽", "🎃"];
 const index = ref(0);
-useIntervalFn();
+const { isActive, pause, resume } = useIntervalFn(
+  () => {
+    if (index.value === namePool.length - 1) {
+      index.value = 0;
+    } else {
+      index.value += 1;
+    }
+  },
+  2000,
+  {
+    immediate: true,
+    immediateCallback: true
+  }
+);
 </script>
 
 <style scoped>
